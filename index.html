@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Course Home Page assignment: Overview of applying HTML, CSS, and JavaScript in the design and development of my course homepage.">
+    <meta name="author" content="Ebenezer John">
+    <meta name="author" content="Ebenezer John">
+    <title>Ebenezer John | Home</title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" media="(max-width: 767px)"/>
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
 </head>
+
 <body>
-    <H1>WDD 231 - EBENEZER JOHN</H1>
+
+    <header>        
+        <button id="menu" class="hamburger" aria-label="Toggle menu">
+            <span></span>
+        </button>     
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <div class="header-top">
+            <img src="images/benny.png" alt="Ebenezer John">
+            <div class="site-title">Ebenezer John</div>
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Chamber</a>
+            <a href="#">Final</a>
+            <a href="https://rbennyjay.github.io/wdd231" target="_blank">GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/ebenezerjohn1" target="_blank">LinkedIn</a>
+        </nav>
+        </header>
+    
+    <main>
+        <h1 class="home-title">Home</h1>
+        <section class="card-container">
+            <section class="card course">
+                <h2>Course Work</h2>
+                <ul id="course-list">
+                    <!-- Course items will be injected here by JS -->
+                </ul>
+            </section>
+
+            <section class="card main-city">
+                <h2>Lagos, Nigeria</h2>
+                <img src="images/lagos1.png" alt="Lagos City">
+                <p>Lagos City</p>
+            </section>
+        </section>        
+
+        <section class="card certificate-section" id="certificate-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons" id="certificate-courses">
+                <button data-filter="all">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
+            </div>
+            <div id="course-buttons" class="course-buttons">
+                <!-- Course buttons will be injected here by course.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>&copy; <span id="current-year"></span> 🌺 Ebenezer John 🌺 Nigeria</span> <img src="images/nigerian_flag1.png" alt="nigerian_flag"><br>
+        <span id="last-modified"></span>
+    </footer>
 </body>
+
 </html>
