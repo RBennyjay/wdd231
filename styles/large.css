@@ -25,6 +25,7 @@ header {
 }
 
 .header-top {
+    margin: 0;
     display: flex;
     justify-content: center;
     /* Center content horizontally */
