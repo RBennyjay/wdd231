@@ -378,3 +378,12 @@ footer img {
 .course-button:hover {
     transform: scale(1.05);
 }
+
+.card.course-work,
+.card.certificate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
