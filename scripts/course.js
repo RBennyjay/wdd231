@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const courseList = document.getElementById("course-list");
     const courseContainer = document.getElementById("course-buttons");
     const filterButtons = document.querySelectorAll(".filter-buttons button");
-
+    const creditsSummary = document.getElementById("credits-summary");
 
     function displayBulletPoints(count) {
         courseList.innerHTML = "";
         for (let i = 0; i < count; i++) {
             const li = document.createElement("li");
-            li.innerHTML = "&nbsp;"; // Just an empty space so the bullet shows
+            li.innerHTML = "&nbsp;";
             courseList.appendChild(li);
         }
     }
@@ -93,7 +93,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Function to render course buttons
+
+    function updateCreditsSummary(courseList) {
+        const totalCredits = courseList.reduce((sum, course) => sum + course.credits, 0);
+        const completedCredits = courseList
+            .filter(course => course.completed)
+            .reduce((sum, course) => sum + course.credits, 0);
+
+        if (creditsSummary) {
+            creditsSummary.innerHTML = `
+                <p><strong>Total Credits:</strong> ${totalCredits}</p>
+                <p><strong>Completed Credits:</strong> ${completedCredits}</p>
+            `;
+        }
+    }
 
     function renderCourses(courseList) {
         courseContainer.innerHTML = "";
@@ -101,16 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
         courseList.forEach(course => {
             const button = document.createElement("button");
             button.classList.add("course-button");
-
-            // Add specific class for completed courses
             if (course.completed) {
                 button.classList.add("completed");
             }
-
-            // Add ✔️ if completed
             button.innerHTML = `${course.subject} ${course.number}${course.completed ? ' ✔️' : ''}`;
             courseContainer.appendChild(button);
         });
+
+        updateCreditsSummary(courseList);
     }
 
     filterButtons.forEach(btn => {
@@ -121,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // renderCourses(courses);
+    // Initial render
+    renderCourses(courses);
     displayBulletPoints(3);
 });
-
