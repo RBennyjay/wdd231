@@ -16,7 +16,7 @@ header {
     margin: 0;
     font-size: 3rem;
     font-weight: 400;
-    /* text-transform: uppercase; */
+   
 }
 
 main {
@@ -47,7 +47,7 @@ main {
     /* <--- Enhanced shadow */
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
-    min-height: 450px;
+    /* min-height: 450px; */
 }
 
 /* Optional: Add hover effect for interactivity */
@@ -66,20 +66,16 @@ main {
     text-align: center;
 }
 
-
 /* Card body */
 #cards section p {
     padding: 0 1rem;
-    /* padding: 1rem; */
-}
+ }
 
 /* Center the image */
 #cards section img {
     display: block;
     margin: 1rem auto;
-    /* width: auto; */
     max-width: 90%;
-    /* height: auto; */
     aspect-ratio: 3 / 4;
     width: 340px;
     height: 400px;

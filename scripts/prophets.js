@@ -37,6 +37,5 @@ const displayProphets = (prophets) => {
     cards.appendChild(card);
   });
 };
-
-
+// Call the function to fetch and display prophet data
 getProphetData();
