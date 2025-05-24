@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Eko Bakery & Confectionery",
+    "address": "15 Adeola Odeku St, Victoria Island, Lagos",
+    "phone": "+234 809 123 4567",
+    "website": "http://ekobakery.com",
+    "image": "images/bread.webp",
+    "membership": 3,
+    "description": "Freshly baked bread, pastries, and custom cakes for all occasions."
+  },
+  {
+    "name": "Lagos Tech Solutions",
+    "address": "2 Ikoyi Rd, Ikoyi, Lagos",
+    "phone": "+234 901 234 5678",
+    "website": "http://lagostechsolutions.com",
+    "image": "images/tech.webp",
+    "membership": 2,
+    "description": "Comprehensive IT support, software development, and network solutions."
+  },
+  {
+    "name": "Green Thumb Landscaping & Nurseries",
+    "address": "7 Oba Akran Ave, Ikeja, Lagos",
+    "phone": "+234 703 456 7890",
+    "website": "http://greenthumb.com.ng",
+    "image": "images/landscape.webp",
+    "membership": 1,
+    "description": "Expert landscape design, garden maintenance, and plant supply."
+  },
+  {
+    "name": "Fitness Hub Lagos",
+    "address": "Plot 5, Admiralty Way, Lekki Phase 1, Lagos",
+    "phone": "+234 815 678 9012",
+    "website": "http://fitnesshublagos.com",
+    "image": "images/fitness.webp",
+    "membership": 3,
+    "description": "State-of-the-art gym facilities, personal training, and group fitness classes."
+  },
+  {
+    "name": "PawCare Vet Clinic",
+    "address": "4 Tinubu St, Surulere, Lagos",
+    "phone": "+234 802 345 6789",
+    "website": "http://pawcarevet.ng",
+    "image": "images/clinic.webp",
+    "membership": 2,
+    "description": "Compassionate veterinary care, pet grooming, and boarding services."
+  },
+  {
+    "name": "Buka Bites Restaurant",
+    "address": "Block B, Balogun Market, Lagos Island, Lagos",
+    "phone": "+234 706 789 0123",
+    "website": "http://bukabites.ng",
+    "image": "images/restuarant.webp",
+    "membership": 1,
+    "description": "Authentic Nigerian cuisine in a vibrant and welcoming atmosphere."
+  },
+  {
+    "name": "Digital Waves Agency",
+    "address": "10 Bourdeillon Rd, Ikoyi, Lagos",
+    "phone": "+234 908 765 4321",
+    "website": "http://digitalwaves.ng",
+    "image": "images/waves.webp",
+    "membership": 2,
+    "description": "Innovative digital marketing, branding, and web development services."
+  }
+]
