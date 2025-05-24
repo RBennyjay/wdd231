@@ -908,6 +908,12 @@ footer {
     }
 }
 
+.join-info ul {
+    padding-left: 20px;
+    margin-left: 0;
+    list-style-position: outside;
+}
+
 /* --- Form Styling for Join Page --- */
 
 .join-form-section {
@@ -1196,10 +1202,25 @@ footer {
     }
 
     #image-montage .image-gallery img {
-        height: 180px;
-        
+        height: 180px;        
     }
-}
+
+        .join-info ul {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    
+    
+        .join-info ul li {
+            margin-right: 5px;
+        }
+
+        *,        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+      }
 
 @media (max-width: 480px) {
     .main-discover-intro h1 {
