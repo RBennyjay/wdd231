@@ -1,30 +1,24 @@
-/* --- CSS Reset/Normalization (from your original reset.css) --- */
+/* --- CSS Reset/Normalization  --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- Global Styles & Typography (from your original styles) --- */
+/* --- Global Styles & Typography --- */
 :root {
     /* Color Schema */
-    --primary-color: #0047AB;
-    /* Dark Blue */
-    --secondary-color: #FFBF00;
-    /* Amber/Gold */
-    --background-color: #F9F9F9;
-    /* Light Grey/Off-white */
-    --text-color: #333333;
-    /* Dark Grey */
-    --card-bg-color: #FFFFFF;
-    /* White */
+    --primary-color: #0047AB;   
+    --secondary-color: #FFBF00;   
+    --background-color: #F9F9F9;    
+    --text-color: #333333;   
+    --card-bg-color: #FFFFFF;  
     --border-color: #e0e0e0;
-    /* Light Grey Border */
+   
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    /* Changed from Open Sans to Roboto based on index.html link */
+    font-family: 'Roboto', sans-serif;    
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
@@ -36,8 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
-    /* Keep Montserrat for headings if you prefer, or change to Roboto */
+    font-family: 'Roboto', sans-serif;   
     color: var(--primary-color);
     margin-bottom: 0.5em;
 }
@@ -56,23 +49,19 @@ a:hover {
     margin: 0 auto;
     padding: 1rem;
 }
-
-/* --- Header Styling (from index.html's CSS) --- */
 header {
     background-color: var(--card-bg-color);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: relative;
-    /* Needed for absolute positioning of mobile nav */
+    position: relative;    
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;  
 }
 
 .logo {
@@ -82,8 +71,7 @@ header {
 }
 
 .logo .chamber-logo {
-    flex-shrink: 0;
-    /* Prevents SVG from shrinking */
+    flex-shrink: 0;    
 }
 
 .chamber-logo path {
@@ -110,8 +98,7 @@ header {
 }
 
 .site-title .chamber-label {
-    font-family: 'Roboto', sans-serif;
-    /* Adjusted to Roboto */
+    font-family: 'Roboto', sans-serif;    
     font-size: 0.9rem;
     font-weight: 400;
     color: var(--text-color);
@@ -123,8 +110,7 @@ header {
     gap: 20px;
 }
 
-nav.main-nav ul {
-    /* Targeting the specific nav for main menu */
+nav.main-nav ul {   
     list-style: none;
     display: flex;
     gap: 20px;
@@ -134,8 +120,7 @@ nav.main-nav a {
     font-weight: 600;
     padding: 5px 0;
     position: relative;
-    color: var(--primary-color);
-    /* Ensure link color is primary */
+    color: var(--primary-color);   
 }
 
 nav.main-nav a:hover {
@@ -159,16 +144,14 @@ nav.main-nav a.active::after {
 }
 
 .hamburger-menu {
-    display: none;
-    /* Hidden by default on larger screens */
+    display: none;   
     cursor: pointer;
     font-size: 1.8rem;
     color: var(--primary-color);
-    order: 2;
-    /* To appear after search icon on mobile */
+    order: 2;  
 }
 
-/* --- Main Content general styling --- */
+
 main {
     max-width: 1200px;
     margin: 2rem auto;
@@ -178,8 +161,7 @@ main {
 /* --- Directory Controls --- */
 .directory-controls {
     display: flex;
-    justify-content: flex-end;
-    /* Align buttons to the right */
+    justify-content: flex-end;  
     gap: 10px;
     margin-bottom: 1.5rem;
 }
@@ -198,7 +180,7 @@ main {
 .directory-controls button:hover {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    /* Change text color on hover for secondary */
+    
 }
 
 /* --- Member Container Views --- */
@@ -252,8 +234,7 @@ main {
 }
 
 .grid-view .member-card img {
-    max-width: 150px;
-    /* Adjust as needed */
+    max-width: 150px;  
     height: auto;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -262,8 +243,7 @@ main {
 
 /* List View Specifics */
 .list-view {
-    grid-template-columns: 1fr;
-    /* Single column for list view */
+    grid-template-columns: 1fr;    
 }
 
 .list-view .member-card {
@@ -272,13 +252,10 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     padding: 1rem 1.5rem;
-    display: flex;
-    /* Use flexbox for list layout */
+    display: flex;   
     align-items: center;
-    gap: 20px;
-    /* Space between image and text */
-    text-align: left;
-    /* Align text left for list */
+    gap: 20px;   
+    text-align: left;  
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -288,19 +265,17 @@ main {
 }
 
 .list-view .member-card img {
-    width: 80px;
-    /* Smaller image for list view */
+    width: 80px;   
     height: 80px;
-    object-fit: contain;
-    /* Ensure full image is visible */
+    object-fit: contain;    
     border-radius: 5px;
     flex-shrink: 0;
-    /* Prevent image from shrinking */
+  
 }
 
 .list-view .member-info {
     flex-grow: 1;
-    /* Allow text content to take remaining space */
+   
 }
 
 .list-view .member-card h3 {
@@ -320,8 +295,6 @@ main {
     font-weight: 600;
 }
 
-/* --- Home Page Specific Styles (Keep these if you want them ONLY on index.html) --- */
-/* If you want to put all styles into main.css, these need to be present */
 .hero-section {
     position: relative;
     width: 100%;
@@ -398,8 +371,7 @@ main {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
-    max-height: 300px;
-    /* Limits height and enables scrolling */
+    max-height: 300px;   
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -412,8 +384,7 @@ main {
 .widget-card h3 {
     background-color: var(--primary-color);
     color: white;
-    margin: -0.75rem -0.75rem 0.75rem -0.75rem;
-    /* Extends background to edges of card */
+    margin: -0.75rem -0.75rem 0.75rem -0.75rem;   
     padding: 0.5rem;
     font-size: 1.1rem;
     text-align: center;
@@ -633,7 +604,6 @@ main {
 }
 
 
-/* --- Footer Styling (from index.html's CSS) --- */
 footer {
     background-color: var(--primary-color);
     color: #fff;
@@ -733,16 +703,14 @@ footer {
     }
 
     nav.main-nav {
-        display: none;
-        /* Hidden by default on mobile */
+        display: none;      
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--card-bg-color);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        /* Ensure it's above other content */
+        z-index: 1000;      
         flex-direction: column;
         padding: 1rem 0;
     }
@@ -775,8 +743,7 @@ footer {
         
     }
 
-    nav.main-nav.active {
-     
+    nav.main-nav.active {     
         display: flex;
     }
 
@@ -785,8 +752,7 @@ footer {
     }
 
     .hamburger-menu {
-        display: block;
-      
+        display: block;      
         margin-left: 15px;
         order: 1;
        
@@ -805,7 +771,7 @@ footer {
 
     .info-widgets {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        /* Adjust grid columns */
+        
     }
 
     .events-widget {
@@ -820,15 +786,13 @@ footer {
 
    
     .directory-controls {
-        flex-direction: column;
-     
+        flex-direction: column;     
         align-items: center;
        
     }
 
     .directory-controls button {
-        width: 100%;
-      
+        width: 100%;      
         max-width: 300px;
        
     }
@@ -839,17 +803,15 @@ footer {
     }
 
     .list-view .member-card {
-        flex-direction: column;
-      
+        flex-direction: column;      
         text-align: center;
     }
 
     .list-view .member-card img {
         margin-bottom: 1rem;
-       
+
     }
 
-    /
     .business-card {
         height: auto;
         min-height: auto;
@@ -946,19 +908,15 @@ footer {
     }
 }
 
-
 /* --- Form Styling for Join Page --- */
 
 .join-form-section {
-    background-color: var(--card-bg-color, #f9f9f9);
-  
+    background-color: var(--card-bg-color, #f9f9f9);  
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    max-width: 700px;
-   
-    margin: 2rem auto;
- 
+    max-width: 700px;   
+    margin: 2rem auto; 
     border: 1px solid var(--border-color, #ddd);
     
 }
@@ -966,8 +924,7 @@ footer {
 .join-form-section h3 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: var(--primary-color, #0056b3);
-   
+    color: var(--primary-color, #0056b3);   
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -976,12 +933,11 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* Space between form fields */
+   
 }
 
 #membershipForm label {
-    display: block;
-   
+    display: block;   
     margin-bottom: 0.3rem;
     font-weight: 600;
     color: var(--text-color, #333);
@@ -989,8 +945,7 @@ footer {
 }
 
 #membershipForm label span {
-    color: #dc3545;
-    /* Red for required asterisk */
+    color: #dc3545;   
     margin-left: 0.2rem;
 }
 
@@ -1007,33 +962,27 @@ footer {
    
     font-size: 1rem;
     color: var(--text-color, #555);
-    background-color: var(--input-bg-color, #fff);
-  
-    box-sizing: border-box;
-   
+    background-color: var(--input-bg-color, #fff);  
+    box-sizing: border-box;   
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #membershipForm input:focus,
 #membershipForm select:focus,
 #membershipForm textarea:focus {
-    border-color: var(--primary-color, #007bff);
-    /* Highlight border on focus */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    /* Light glow on focus */
+    border-color: var(--primary-color, #007bff);   
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);    
     outline: none;
-    /* Remove default outline */
+   
 }
 
 #membershipForm textarea {
-    resize: vertical;
-    /* Allow vertical resizing only */
+    resize: vertical;  
     min-height: 80px;
 }
 
 #membershipForm button[type="submit"] {
-    background-color: var(--primary-color, #007bff);
-    
+    background-color: var(--primary-color, #007bff);    
     color: white;
     padding: 1rem 1.5rem;
     border: none;
@@ -1042,16 +991,13 @@ footer {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: center;
-   
-    width: auto;
-   
+    align-self: center;   
+    width: auto;   
     min-width: 180px;
 }
 
 #membershipForm button[type="submit"]:hover {
-    background-color: var(--primary-hover-color, #0056b3);
-    
+    background-color: var(--primary-hover-color, #0056b3);    
     transform: translateY(-2px);
    
 }
@@ -1100,23 +1046,18 @@ footer {
     #membershipForm button[type="submit"] {
         padding: 0.9rem 1.2rem;
         font-size: 1rem;
-        min-width: unset;
-        /
+        min-width: unset;        
         width: 100%;
         
     }
 }
-
-
-/* --- Discover Page Specific Styling --- */
 
 /* Intro Section Styling */
 .main-discover-intro {
     text-align: center;
     padding: 2rem 1rem;
     margin-bottom: 1.5rem;
-    background-color: var(--light-bg-color, #eef7ff);
-   
+    background-color: var(--light-bg-color, #eef7ff);   
     border-bottom: 2px solid var(--border-color, #ddd);
 }
 
@@ -1137,8 +1078,7 @@ footer {
 
 /* General Section Styling */
 .discover-section {
-    padding: 2.5rem 1rem;
- 
+    padding: 2.5rem 1rem; 
     margin-bottom: 1.5rem;
     background-color: var(--card-bg-color, #ffffff);
     border-radius: 8px;
@@ -1146,8 +1086,7 @@ footer {
     border: 1px solid var(--border-color, #eee);
 }
 
-.discover-section:nth-of-type(even) {
-    
+.discover-section:nth-of-type(even) {    
     background-color: var(--light-bg-color, #f8faff);
 }
 /* General Section Styling */
@@ -1155,8 +1094,7 @@ footer {
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 2.2rem;
-    color: var(--primary-color, #0056b3);
-   
+    color: var(--primary-color, #0056b3);   
     border-bottom: 2px solid var(--border-color, #eee);
     padding-bottom: 0.8rem;
     display: inline-block;
@@ -1174,20 +1112,17 @@ footer {
 
 /* List Styling (Demographics and Events) */
 .discover-section ul {
-    list-style: none;
-   
+    list-style: none;   
     padding: 0;
     margin: 0;
     line-height: 1.8;
-    max-width: 700px;
-   
+    max-width: 700px;   
     margin: 0 auto;
    
 }
 
 .discover-section li {
-    padding-left: 1.8rem;
-    
+    padding-left: 1.8rem;    
     position: relative;
     margin-bottom: 0.5rem;
     color: var(--text-color-dark, #333);
@@ -1196,14 +1131,9 @@ footer {
 
 .discover-section li::before {
     content: "\2022";
-  
     font-family: 'Font Awesome 5 Free';
-    
     font-weight: 900;
-   
-    
-    */ color: var(--primary-color, #007bff);
-   
+    color: var(--primary-color, #007bff);
     position: absolute;
     left: 0;
     top: 0;
@@ -1217,32 +1147,24 @@ footer {
 /* Image Gallery Styling */
 #image-montage .image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   
     gap: 1.5rem;
-   
     margin-top: 2rem;
 }
 
 #image-montage .image-gallery img {
     width: 100%;
-    height: 220px;
-    
-    object-fit: cover;
-   
-    border-radius: 10px;
-   
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-   
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
+    height: 220px;    
+    object-fit: cover;   
+    border-radius: 10px;   
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;   
     border: 1px solid var(--border-color, #eee);
     
 }
 
 #image-montage .image-gallery img:hover {
-    transform: translateY(-5px) scale(1.02);
-    /* Lift and slightly enlarge on hover */
+    transform: translateY(-5px) scale(1.02);   
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
  
 }
@@ -1289,7 +1211,6 @@ footer {
     }
 }
 
-
 /* --- Image Gallery with Captions Styling --- */
 
 #image-montage .image-gallery figure {
@@ -1316,7 +1237,6 @@ footer {
   
 }
 
-
 /* --- Directory Card Image Styling --- */
 
 .member-card .member-logo {
@@ -1331,7 +1251,7 @@ footer {
     background-color: #fff; 
 }
 
-/* Adjustments for List View if needed */
+
 .list-view .member-card .member-logo {
     width: 80px; 
     height: 80px;
@@ -1339,7 +1259,4 @@ footer {
     flex-shrink: 0; 
 }
 
-/
-.grid-view .member-card .member-logo {
-    /* No specific changes needed here if 200x200 is  for grid */
-}
+
