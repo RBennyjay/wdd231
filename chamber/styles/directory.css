@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+
+/* * {
+    outline: 1px solid red !important;
+} */
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;  
+}
+
 /* --- Global Styles & Typography --- */
 :root {
     /* Color Schema */
@@ -13,7 +24,8 @@
     --background-color: #F9F9F9;
     --text-color: #333333;
     --card-bg-color: #FFFFFF;
-    --border-color: #e0e0e0;
+    --border-color: #e0e0e0;  
+    --primary-hover-color: #003380;
 }
 
 body {
@@ -29,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: var(--primary-color);
     margin-bottom: 0.5em;
 }
@@ -54,6 +66,8 @@ header {
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+   
 }
 
 .header-content {
@@ -61,7 +75,6 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 .logo {
@@ -70,11 +83,9 @@ header {
     gap: 10px;
 }
 
-
 .logo .chamber-logo {
     flex-shrink: 0;
 }
-
 
 .chamber-logo path {
     fill: var(--primary-color);
@@ -122,6 +133,7 @@ nav a {
     font-weight: 600;
     padding: 5px 0;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 nav a.active::after {
@@ -140,63 +152,89 @@ nav a.active::after {
     cursor: pointer;
 }
 
-
 .hamburger-menu {
-    display: none;
+    display: none;   
     cursor: pointer;
     font-size: 1.8rem;
-
     color: var(--primary-color);
-    order: 2;
-
-}
-
-.main-nav {
-    display: block;
+    order: 2;    
 }
 
 /* --- Hero Section --- */
 .hero-section {
     position: relative;
     width: 100%;
-    height: 350px;   
+    height: 350px;
     background-color: transparent;
     margin-bottom: 2rem;
-    overflow: hidden;
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;    
 }
 
 .hero-image-placeholder {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 1rem;
-    width: calc(100% - (2 * 1rem));
-    height: calc(100% - (2 * 1rem));
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    overflow: hidden;
+    overflow: hidden;   
     display: flex;
     justify-content: center;
     align-items: center;
- 
+    box-sizing: border-box;
 }
 
 .hero-image-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;    
     object-position: center;
+    display: block;    
     border: none;
-   
     box-shadow: none;
-    
 }
 
+/* Accessibility improvement */
 .hero-image-placeholder img:focus {
     outline: none;
+}
+
+/* --- Hero Section Call-to-Action Button --- */
+.hero-cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.hero-cta-button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-content {
+    position: relative;    
+    z-index: 10;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .keynote-tickets-btn {
@@ -225,7 +263,7 @@ nav a.active::after {
     margin-bottom: 1.5rem;
     text-align: left;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-color);   
+    border-bottom: 2px solid var(--primary-color);
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -237,7 +275,7 @@ nav a.active::after {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.75rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);   
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
     max-height: 300px;
@@ -245,12 +283,10 @@ nav a.active::after {
     overflow-x: hidden;
 }
 
-
 .widget-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
-
 
 .widget-card h3 {
     background-color: var(--primary-color);
@@ -264,7 +300,6 @@ nav a.active::after {
 .widget-card p {
     margin-bottom: 0.2em;
 }
-
 
 .info-widgets {
     display: grid;
@@ -359,7 +394,6 @@ nav a.active::after {
     color: var(--primary-color);
 }
 
-
 .business-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -378,7 +412,7 @@ nav a.active::after {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
     text-align: left;
-    min-height: 180px;  
+    min-height: 180px;
     height: auto;
 }
 
@@ -387,15 +421,14 @@ nav a.active::after {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-
 .business-card-top {
-    flex: 0 0 30%; 
+    flex: 0 0 30%;
     display: flex;
     flex-direction: column;
-    justify-content: center;   
-    align-items: center;  
-    padding: 0.5rem 1rem;   
-    box-sizing: border-box; 
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
 }
 
 .business-card h4.business-name {
@@ -407,54 +440,52 @@ nav a.active::after {
 
 .business-card .business-tagline {
     font-style: italic;
-    color: #555;    
-    font-weight: bold;  
-    font-size: 1rem;   
+    color: #555;
+    font-weight: bold;
+    font-size: 1rem;
     margin-bottom: 0;
     text-align: center;
 }
 
-
 .business-card-divider {
     width: 100%;
-    height: 2px;  
+    height: 2px;
     background-color: var(--border-color);
     flex-shrink: 0;
 }
 
-
 .business-card-bottom {
-    flex: 1 0 70%;   
+    flex: 1 0 70%;
     display: flex;
-    flex-direction: row;    
-    align-items: flex-end;   
-    padding: 1rem;   
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1rem;
     box-sizing: border-box;
 }
 
 .business-image-placeholder {
     width: 100px;
-    height: 100%;   
+    height: 100%;
     flex-shrink: 0;
     margin-right: 1rem;
     display: flex;
-    justify-content: flex-start;   
-    align-items: center;    
+    justify-content: flex-start;
+    align-items: center;
     overflow: hidden;
-    padding: 0.5rem;    
-    box-sizing: border-box;  
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 
 .business-image-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: contain;    
+    object-fit: contain;
     border-radius: 0;
 }
 
 .contact-info {
     flex-grow: 1;
-    align-self: flex-start;   
+    align-self: flex-start;
 }
 
 .contact-info p {
@@ -476,13 +507,10 @@ nav a.active::after {
 }
 
 /* --- Footer Styling --- */
-/* --- Footer Styling --- */
 footer {
     background-color: var(--primary-color);
     color: #fff;
     padding: 1rem 0 0.5rem 0;
-    /* Changed: Top padding 1rem, Bottom padding 0.5rem */
-    /* You can even remove bottom padding entirely: padding: 1rem 0 0; */
     font-size: 0.9rem;
 }
 
@@ -492,34 +520,18 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     text-align: center;
-    /* Add padding to the container inside if you want inner spacing */
     padding-bottom: 1rem;
-    /* Example: add some padding here instead */
 }
 
-/* Ensure inner elements don't have excessive margins pushing the footer down */
 .footer-contact p,
 .footer-info p {
     margin-bottom: 0.5em;
-    /* Keep this if you want spacing between paragraphs */
 }
 
-/* Add this if you have a copyright/info line at the very bottom that needs its own spacing */
 .copyright-info {
     margin-top: 1rem;
-    /* Adjust as needed */
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
 
 .footer-contact,
 .footer-social,
@@ -528,7 +540,8 @@ footer {
     min-width: 250px;
 }
 
-.footer-contact h3,.footer-info h3 {
+.footer-contact h3,
+.footer-info h3 {
     color: var(--secondary-color);
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -571,43 +584,38 @@ footer {
     margin-bottom: 0.5em;
 }
 
-#lastModified, #last-mode {
-    /* color: var(--secondary-color);   */
+#lastModified,
+#last-mode {
     font-weight: 400;
     font-size: 12px;
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-       .header-content {
-        flex-direction: row;        
-        justify-content: space-between;       
-        align-items: center;
-        flex-wrap: nowrap;       
+    header {
+        padding-bottom: 0;        
     }
 
-    .logo {
-        margin-bottom: 0;       
+    .header-content {
+        flex-wrap: nowrap;        
     }
 
     .header-right-group {
-        flex-direction: row;        
         gap: 10px;
-        width: auto;        
-        margin-bottom: 0;       
     }
 
+    /* Hide desktop nav */
     nav.main-nav {
-        display: none;      
+        display: none;
         position: absolute;
-        top: 100%;       
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--card-bg-color);     
+        background-color: var(--card-bg-color);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 100;        
-        flex-direction: column;        
-        padding: 1rem 0;       
+        z-index: 1000;
+        flex-direction: column;
+        padding: 1rem 0;
     }
 
     nav.main-nav ul {
@@ -619,71 +627,63 @@ footer {
 
     nav.main-nav ul li {
         width: 100%;
-        }
+    }
 
     nav.main-nav a {
         display: block;
         padding: 10px 0;
         border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: var(--primary-color);
     }
 
     nav.main-nav ul li:last-child a {
-        border-bottom: none;       
+        border-bottom: none;
     }
 
     nav.main-nav a.active::after {
-        bottom: 0;        
+        bottom: 0;
     }
 
-  
-    nav.main-nav.active {
-        display: flex;        
-    }
-
-    .search-icon {
-        margin-left: 0;
+    nav.main-nav.active,
+    nav.main-nav.show {        
+        display: flex;
     }
 
     .hamburger-menu {
-        display: block;
+        display: block;       
         margin-left: 15px;
         order: 1;
     }
 
-    .main-nav {
-        display: none;
+    /* Hero section for smaller screens */
+    .hero-section {
+        height: 250px;
+        
     }
 
-    .main-nav.active {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .hero-image-placeholder {
-        margin: 0.5rem;
-        width: calc(100% - (2 * 0.5rem));
-        height: calc(100% - (2 * 0.5rem));
-    }
-
+    
     .info-widgets {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    
+
     .events-widget {
         grid-column: auto;
+       
     }
 
     .widget-card h3 {
         font-size: 1.2rem;
         margin-bottom: 1rem;
     }
-   
+
+    /* Business card for smaller screens */
     .business-card {
+        flex-direction: column;
         height: auto;
         min-height: auto;
-        flex-direction: column;
         padding: 0;
+        
     }
 
     .business-card-top {
@@ -729,37 +729,35 @@ footer {
         text-align: left;
     }
 
-    .main-nav {
-        display: none;            
-        position: absolute;
-        top: 100%;           
-        left: 0;
-        width: 100%;
-        background-color: var(--card-bg-color);
-        z-index: 9999;
-        flex-direction: column;
-        gap: 0;
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    
-        .main-nav.show {
-            display: flex;
-        }
-    
-        nav ul {
-            flex-direction: column;
-            gap: 15px;
-        }
-    
-        .hamburger-menu {
-            display: block;
-        }
-        
-     main {
-        transition: margin-top 0.3s ease-out;
-      }
+    header nav.main-nav a:hover,
+    header nav.main-nav a:focus,
+    header nav.main-nav a:active {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
 
+    main {
+        transition: margin-top 0.3s ease-out;
+        
+    }
+}
+
+@media (max-width: 600px) {
+    .business-card-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .business-image-placeholder {
+        margin-bottom: 5px;
+    }
+
+    .hero-cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -771,11 +769,7 @@ footer {
         font-size: 0.8rem;
     }
 
-    .hero-image-placeholder {
-        margin: 0.25rem;
-        width: calc(100% - (2 * 0.25rem));
-        height: calc(100% - (2 * 0.25rem));
-    }
+    
 
     .keynote-tickets-btn {
         font-size: 0.9rem;
@@ -790,344 +784,5 @@ footer {
 
     .weather-details .temperature {
         font-size: 1.8rem;
-    }
-}
-
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    header {        
-        position: relative;        
-        padding-bottom: 0;
-       
-    }
-
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-    }
-
-    .logo {
-        margin-bottom: 0;
-    }
-
-    .header-right-group {
-        flex-direction: row;
-        gap: 10px;
-        width: auto;
-        margin-bottom: 0;
-    }
-
-    nav.main-nav {
-        display: none;
-        position: absolute;       
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--card-bg-color);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);       
-        z-index: 1000;    
-        flex-direction: column;
-        padding: 1rem 0;
-    }
-
-    nav.main-nav ul {
-        flex-direction: column;
-        gap: 5px;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav.main-nav ul li {
-        width: 100%;
-    }
-
-    nav.main-nav a {
-        display: block;
-        padding: 10px 0;
-        border-bottom: 1px solid var(--border-color);
-        transition: background-color 0.3s ease, color 0.3s ease;
-        color: var(--primary-color);
-    }
-
-    nav.main-nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    nav.main-nav a.active::after {
-        bottom: 0;
-    }
-
-    nav.main-nav.active {
-        display: flex;
-    }
-
-    .search-icon {
-        margin-left: 0;
-    }
-
-    .hamburger-menu {
-        display: block;
-        margin-left: 15px;
-        order: 1;
-    }
-
-  
-    .main-nav {
-        display: none;
-    }
-
-    .main-nav.active {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    
-    .hero-image-placeholder {
-        margin: 0.5rem;
-        width: calc(100% - (2 * 0.5rem));
-        height: calc(100% - (2 * 0.5rem));
-    }
-
-    .info-widgets {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .events-widget {
-        grid-column: auto;
-    }
-
-    .widget-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-
-
-        /* --- Styling for Business Cards on index.html --- */
-    
-        .business-card {
-        
-            background-color: var(--card-bg-color, #ffffff);
-            border: 1px solid var(--border-color, #eee);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-           /
-            overflow: hidden;
-           
-        }
-    
-        .business-card-top {
-            text-align: center;
-           
-            margin-bottom: 10px;
-        }
-    
-        .business-name {
-            font-size: 1.5rem;
-           
-            color: var(--primary-color, #0056b3);
-            margin-bottom: 5px;
-        }
-    
-        .business-tagline {
-            font-size: 0.95rem;
-            color: var(--text-color-secondary, #777);
-        }
-    
-        .business-card-divider {
-            border-top: 1px solid var(--border-border, #ddd);
-            margin: 15px 0;
-           
-        }
-    
-        .business-card-bottom {
-            display: flex;
-           
-            align-items: center;
-          
-            gap: 20px;
-            
-            flex-grow: 1;
-           
-        }
-    
-        .business-image-placeholder {
-            flex-shrink: 0;
-           
-            width: 100px;
-           
-            height: 100px;
-           
-            border: 1px solid var(--border-color, #ddd);
-            
-            border-radius: 8px;
-           
-            overflow: hidden;
-           
-            background-color: #fff;
-            
-            display: flex;
-           
-            justify-content: center;
-            align-items: center;
-        }
-    
-        .business-image-placeholder img {
-            display: block;
-            
-            max-width: 100%;
-          
-            max-height: 100%;
-        
-            object-fit: contain;
-           
-            border-radius: 5px;
-            
-        }
-    
-        .contact-info {
-            flex-grow: 1;
-            
-            font-size: 0.9rem;
-            color: var(--text-color, #333);
-        }
-    
-        .contact-info p {
-            margin: 5px 0;
-            /* font-size: medium; */
-           
-        }
-    
-        .contact-info a {
-            color: var(--primary-color, #0056b3);
-            text-decoration: none;
-        }
-    
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-    
-        /* --- Responsive Adjustments for Smaller Screens --- */
-        @media (max-width: 600px) {
-            .business-card-bottom {
-                flex-direction: column;
-                
-                align-items: center;
-                
-                text-align: center;
-                
-                gap: 15px;
-               
-            }
-    
-            .business-image-placeholder {
-                margin-bottom: 5px;
-               
-            }
-        }
-
-
-
-
-
-
-
-
-    
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--card-bg-color);
-        z-index: 9999;
-        flex-direction: column;
-        gap: 0;
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .main-nav.show {
-        display: flex;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hamburger-menu {
-        display: block;
-    }
-
-        header nav.main-nav a:hover,
-        header nav.main-nav a:focus,
-        header nav.main-nav a:active {
-            background-color: var(--primary-color);
-            color: #fff;
-            transition: background-color 0.3s ease, color 0.3s ease;
-              
-        }
-        
-}
-
-
-/* --- Hero Section Call-to-Action Button --- */
-.hero-cta-button {
-    display: inline-block;
-    /* Allows padding and margin */
-    background-color: var(--primary-color, #007bff);
-    /* Use your primary color */
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    /* Remove underline */
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    /* Space from the paragraph above */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Subtle shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.hero-cta-button:hover {
-    background-color: var(--primary-hover-color, #0056b3);
-    /* Darker shade on hover */
-    transform: translateY(-3px);
-    /* Lift effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    /* Enhanced shadow on hover */
-}
-
-/* Ensure the button is centered in the hero content */
-.hero-content {
-    /* ... (your existing hero-content styles) ... */
-    display: flex;
-    /* Assuming it's a flex container for its children */
-    flex-direction: column;
-    /* Stack children vertically */
-    align-items: center;
-    /* Center horizontally */
-    justify-content: center;
-    /* Center vertically */
-    text-align: center;
-    /* Center text within p/h2 */
-}
-
-/* Adjust button size for smaller screens */
-@media (max-width: 600px) {
-    .hero-cta-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
     }
 }

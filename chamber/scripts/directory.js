@@ -11,28 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.main-nav');
     const mainContent = document.querySelector('main'); 
-    const hamburgerIcon = document.querySelector('.hamburger-menu i'); // Select the Font Awesome icon element
-
-    // Ensure all necessary elements exist before adding listeners
+    const hamburgerIcon = document.querySelector('.hamburger-menu i');     
     if (hamburger && navMenu && mainContent && hamburgerIcon) { 
-        hamburger.addEventListener('click', function () {
-            // Toggle classes for nav menu visibility and hamburger icon animation
+        hamburger.addEventListener('click', function () {            
             navMenu.classList.toggle('active'); 
-            hamburger.classList.toggle('open'); // This class is already toggled on the hamburger div
+            hamburger.classList.toggle('open'); 
 
             // --- Icon Change Logic: Swap Font Awesome classes ---
             if (hamburger.classList.contains('open')) {
-                hamburgerIcon.classList.remove('fa-bars'); // Remove bars icon
-                hamburgerIcon.classList.add('fa-times');  // Add times (X) icon
+                hamburgerIcon.classList.remove('fa-bars'); 
+                hamburgerIcon.classList.add('fa-times');  
             } else {
-                hamburgerIcon.classList.remove('fa-times'); // Remove times (X) icon
-                hamburgerIcon.classList.add('fa-bars');   // Add bars icon
+                hamburgerIcon.classList.remove('fa-times'); 
+                hamburgerIcon.classList.add('fa-bars');  
             }
             // --- End Icon Change Logic ---
 
             // --- Content Pushing Logic ---
-            // Only apply this logic on smaller screens where the nav is meant to toggle
-            if (window.innerWidth <= 768) { 
+            if (window.innerWidth <= 768) {
                 if (navMenu.classList.contains('active')) {
                     const navHeight = navMenu.offsetHeight; 
                     mainContent.style.marginTop = `${navHeight}px`;
