@@ -13,7 +13,7 @@
 html,
 body {
     width: 100%;
-    overflow-x: hidden;  
+    overflow-x: hidden;
 }
 
 /* --- Global Styles & Typography --- */
@@ -24,7 +24,7 @@ body {
     --background-color: #F9F9F9;
     --text-color: #333333;
     --card-bg-color: #FFFFFF;
-    --border-color: #e0e0e0;  
+    --border-color: #e0e0e0;
     --primary-hover-color: #003380;
 }
 
@@ -67,7 +67,7 @@ header {
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
-   
+
 }
 
 .header-content {
@@ -153,11 +153,11 @@ nav a.active::after {
 }
 
 .hamburger-menu {
-    display: none;   
+    display: none;
     cursor: pointer;
     font-size: 1.8rem;
     color: var(--primary-color);
-    order: 2;    
+    order: 2;
 }
 
 /* --- Hero Section --- */
@@ -167,12 +167,12 @@ nav a.active::after {
     height: 350px;
     background-color: transparent;
     margin-bottom: 2rem;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
 .hero-image-placeholder {
@@ -182,7 +182,7 @@ nav a.active::after {
     width: 100%;
     height: 100%;
     z-index: 1;
-    overflow: hidden;   
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,9 +192,9 @@ nav a.active::after {
 .hero-image-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;    
+    object-fit: cover;
     object-position: center;
-    display: block;    
+    display: block;
     border: none;
     box-shadow: none;
 }
@@ -228,8 +228,8 @@ nav a.active::after {
 
 
 .hero-content {
-    position: relative;    
-    z-index: 10;   
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -593,11 +593,11 @@ footer {
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     header {
-        padding-bottom: 0;        
+        padding-bottom: 0;
     }
 
     .header-content {
-        flex-wrap: nowrap;        
+        flex-wrap: nowrap;
     }
 
     .header-right-group {
@@ -646,12 +646,12 @@ footer {
     }
 
     nav.main-nav.active,
-    nav.main-nav.show {        
+    nav.main-nav.show {
         display: flex;
     }
 
     .hamburger-menu {
-        display: block;       
+        display: block;
         margin-left: 15px;
         order: 1;
     }
@@ -659,17 +659,17 @@ footer {
     /* Hero section for smaller screens */
     .hero-section {
         height: 250px;
-        
+
     }
 
-    
+
     .info-widgets {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .events-widget {
         grid-column: auto;
-       
+
     }
 
     .widget-card h3 {
@@ -683,7 +683,7 @@ footer {
         height: auto;
         min-height: auto;
         padding: 0;
-        
+
     }
 
     .business-card-top {
@@ -738,7 +738,7 @@ footer {
 
     main {
         transition: margin-top 0.3s ease-out;
-        
+
     }
 }
 
@@ -769,7 +769,7 @@ footer {
         font-size: 0.8rem;
     }
 
-    
+
 
     .keynote-tickets-btn {
         font-size: 0.9rem;
