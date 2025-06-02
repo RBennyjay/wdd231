@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Hamburger Menu Logic ---
-    if (hamburger && navMenu && mainContent && hamburgerIcon) {        
+    if (hamburger && navMenu && mainContent && hamburgerIcon) {         
         const toggleMenu = () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('open');
@@ -38,14 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Close menu when a nav link is clicked (for mobile usability)
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {                
+            link.addEventListener('click', () => {                 
                 if (navMenu.classList.contains('active')) {
                     toggleMenu(); 
                 }
             });
         });
 
-        
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 if (navMenu.classList.contains('active')) { 
@@ -80,6 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
         members.forEach(member => {
             const card = document.createElement("div");
             card.classList.add("member-card");
+            
+            // Add class for specific membership levels for styling 
+            let membershipClass = '';
+            if (member.membership === 1) membershipClass = 'gold-member';
+            else if (member.membership === 2) membershipClass = 'silver-member';
+            else if (member.membership === 3) membershipClass = 'bronze-member'; // Or 'standard-member'
+            if (membershipClass) card.classList.add(membershipClass);
+
             card.innerHTML = `
                 <img src="${member.image}" alt="${member.name} logo" loading="lazy" 
                      width="150" height="150" class="member-logo" />
@@ -88,24 +95,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p><strong>Address:</strong> ${member.address}</p>
                 <p><strong>Phone:</strong> ${member.phone}</p>
                 <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p class="membership">Membership: ${getMembershipLevel(member.membership)}</p>
+                <p class="membership">Membership: <strong>${getMembershipLevel(member.membership)}</strong></p>
             `;
-          membersContainer.appendChild(card);
-          
-          
+            membersContainer.appendChild(card);
         });
 
-        // Ensure the initial view is set after loading members, if not already
+        //  initial view is set after loading members
         if (!membersContainer.classList.contains('grid-view') && !membersContainer.classList.contains('list-view')) {
             membersContainer.classList.add('grid-view'); 
         }
     }
 
+    // --- Membership Level Mapping ---
+    // Assuming: 1 = Gold, 2 = Silver, 3 = Bronze (or Standard)
     function getMembershipLevel(level) {
         switch (level) {
-            case 3: return "Gold";
+            case 1: return "Gold";
             case 2: return "Silver";
-            default: return "Member";
+            case 3: return "Bronze"; 
+            default: return "Standard Member"; // For any other unexpected values
         }
     }
 
@@ -121,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
             membersContainer.classList.remove("grid-view");
         });
     }
-
-    
-    loadMembers();
+// Initiate loading of members 
+    loadMembers(); 
 });

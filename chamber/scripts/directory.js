@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Optional: Reset margin-top and close nav if window is resized from mobile to desktop
+        //  Reset margin-top and close nav if window is resized from mobile to desktop
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 mainContent.style.marginTop = '0';
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // --- Icon Change Logic on Resize: Reset to bars icon ---
                 hamburgerIcon.classList.remove('fa-times');
                 hamburgerIcon.classList.add('fa-bars');
-                // --- End Icon Change Logic on Resize ---
+               
             }
         });
     }

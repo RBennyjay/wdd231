@@ -29,13 +29,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print"
+            onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            </noscript>
+
+    
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles/directory.css" />
     <script src="scripts/directory.js" defer></script>
-    <!-- <script src="scripts/events.js" defer></script> -->
+    <script src="scripts/my-weather.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
 </head>
 
 <body>
@@ -99,7 +109,7 @@
                 </picture>
             </div>
             <div class="hero-content">
-                <h2>Welcome to the Lagos Chamber of Commerce</h2>
+                <h1>Welcome to the Lagos Chamber of Commerce</h1>
                 <p>Your Gateway to Business Growth and Community Engagement</p>
                 <a href="https://www.eventbrite.com/d/nigeria--lagos/free--events" target="_blank"
                     class="button hero-cta-button">Get Your Keynote Ticket!</a>
@@ -109,28 +119,79 @@
         </section>
 
 
-        <!-- <section class="home-content container">
-                    <h2>Home</h2>
-                
-                    <div class="info-widgets">
-                        <div class="events-widget widget-card">
-                            <h3>Events</h3>
-                            <ul class="event-list" id="eventList">
-                            </ul>
-                            <a href="#" class="more-events" id="showMoreEventsBtn">See More Events <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>      </section> -->
-
-
-
-
-
-
         <section class="home-content container">
             <h2>Home</h2>
 
             <div class="info-widgets">
+                <div class="events-widget widget-card">
+                    <h3>Events</h3>
+                    <ul class="event-list">
+                        <li>
+                            <p class="event-date">May 28</p>
+                            <p class="event-title">Annual Business Summit</p>
+                            <p class="event-time">9:00 AM - 5:00 PM</p>
+                        </li>
+                        <li>
+                            <p class="event-date">June 5</p>
+                            <p class="event-title">Networking Mixer</p>
+                            <p class="event-time">6:00 PM - 8:00 PM</p>
+                        </li>
+                        <li>
+                            <p class="event-date">July 1</p>
+                            <p class="event-title">Small Business Workshop</p>
+                            <p class="event-time">10:00 AM - 12:00 PM</p>
+                        </li>
+                        <li>
+                            <p class="event-date">July 15</p>
+                            <p class="event-title">Community Service Day</p>
+                            <p class="event-time">All Day</p>
+                        </li>
+                    </ul>
+                    <a href="#" class="more-events">See More Events <i class="fas fa-arrow-right"></i></a>
+                </div>
+            
+                <div class="weather-current-widget widget-card">
+                    <h3>Current Weather</h3>
+                    <div class="weather-details">
+                        <p class="temperature"><span id="current-temp">--</span>°C <i id="current-weather-icon"
+                                class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="current-condition">Loading...</p>
+                        <p>Humidity: <span id="current-humidity">--</span>%</p>
+                        <p>Wind: <span id="current-wind-speed">--</span> km/h <span id="current-wind-direction">--</span></p>
+                        <p>Sunrise: <span id="current-sunrise">--</span></p>
+                        <p>Sunset: <span id="current-sunset">--</span></p>
+                    </div>
+                </div>
+            
+                <div class="weather-forecast-widget widget-card">
+                    <h3>Weather Forecast</h3>
+                    <div class="forecast-details">
+                        <p><span id="forecast-day1-label">Tomorrow</span>: <strong><span
+                                    id="forecast-day1-temp">--</span>°C</strong> <i id="forecast-day1-icon"
+                                class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="forecast-day1-condition">Loading...</p>
+                        <p><span id="forecast-day2-label">Day 2</span>: <strong><span id="forecast-day2-temp">--</span>°C</strong>
+                            <i id="forecast-day2-icon" class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="forecast-day2-condition">Loading...</p>
+                        <p><span id="forecast-day3-label">Day 3</span>: <strong><span id="forecast-day3-temp">--</span>°C</strong>
+                            <i id="forecast-day3-icon" class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="forecast-day3-condition">Loading...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="business-cards-container" id="business-spotlights">
+                <h3>Chamber Member Spotlights</h3> 
+             </div>
+
+
+
+
+
+
+
+
+            <!-- <div class="info-widgets">
                 <div class="events-widget widget-card">
                     <h3>Events</h3>
                     <ul class="event-list">
@@ -179,7 +240,75 @@
                         <p>Thursday: <strong>68°F</strong> <i class="fas fa-cloud-showers-heavy"></i></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+
+            <!-- <div class="info-widgets">
+                <div class="events-widget widget-card">
+                    <h3>Events</h3>
+                    <ul class="event-list">
+                        <li>
+                            <p class="event-date">June 4</p>
+                            <p class="event-title">Annual Business Summit</p>
+                            <p class="event-time">9:00 AM - 5:00 PM</p>
+                        </li>
+                        <li>
+                            <p class="event-date">June 5</p>
+                            <p class="event-title">Networking Mixer</p>
+                            <p class="event-time">6:00 PM - 8:00 PM</p>
+                        </li>
+                        <li>
+                            <p class="event-date">July 1</p>
+                            <p class="event-title">Small Business Workshop</p>
+                            <p class="event-time">10:00 AM - 12:00 PM</p>
+                        </li>
+                        <li>
+                            <p class="event-date">July 15</p>
+                            <p class="event-title">Community Service Day</p>
+                            <p class="event-time">All Day</p>
+                        </li>
+                    </ul>
+                    <a href="#" class="more-events">See More Events <i class="fas fa-arrow-right"></i></a>
+                </div>
+            
+                <div class="weather-current-widget widget-card">
+                    <h3>Current Weather</h3>
+                    <div class="weather-details">
+                        <p class="temperature"><span id="current-temp">--</span>°C <i id="current-weather-icon"
+                                class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="current-condition">Loading...</p>
+                        <p>Humidity: <span id="current-humidity">--</span>%</p>
+                        <p>Wind: <span id="current-wind-speed">--</span> km/h <span id="current-wind-direction">--</span></p>
+                        <p>Sunrise: <span id="current-sunrise">--</span></p>
+                        <p>Sunset: <span id="current-sunset">--</span></p>
+                    </div>
+                </div>
+            
+                <div class="weather-forecast-widget widget-card">
+                    <h3>Weather Forecast</h3>
+                    <div class="forecast-details">
+                        <p><span id="forecast-day1-label">Tomorrow</span>: <strong><span
+                                    id="forecast-day1-temp">--</span>°C</strong> <i id="forecast-day1-icon"
+                                class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="forecast-day1-condition">Loading...</p>
+                        <p><span id="forecast-day2-label">Day 2</span>: <strong><span id="forecast-day2-temp">--</span>°C</strong>
+                            <i id="forecast-day2-icon" class="fas fa-question-circle"></i></p>
+                        <p class="condition" id="forecast-day2-condition">Loading...</p>
+                    </div>
+                </div>      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,7 +372,7 @@
                             </p>
 
                         </div>
-                    </div>
+                    </div> -->
 
     </main>
 

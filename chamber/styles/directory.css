@@ -236,6 +236,11 @@ nav a.active::after {
     justify-content: center;
     text-align: center;
 }
+.hero-content h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
 
 .keynote-tickets-btn {
     position: absolute;
@@ -504,6 +509,13 @@ nav a.active::after {
 
 .business-card p {
     margin-bottom: 0;
+}
+
+.business-cards-container h3 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--primary-color);
+    grid-column: 1 / -1;
 }
 
 /* --- Footer Styling --- */
@@ -786,3 +798,5 @@ footer {
         font-size: 1.8rem;
     }
 }
+
+
