@@ -29,17 +29,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print"
+   
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print"
             onload="this.media='all'">
-        <noscript>
+    <noscript>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-            </noscript>
-
-    
+     </noscript>
+   
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/directory.css" />
@@ -97,9 +94,6 @@
     </header>
 
     <main>
-
-
-
         <section class="hero">
             <div class="hero-image-container">
                 <picture>
@@ -117,11 +111,8 @@
             <div class="weather-card">
             </div>
         </section>
-
-
         <section class="home-content container">
             <h2>Home</h2>
-
             <div class="info-widgets">
                 <div class="events-widget widget-card">
                     <h3>Events</h3>
@@ -182,197 +173,7 @@
             
             <div class="business-cards-container" id="business-spotlights">
                 <h3>Chamber Member Spotlights</h3> 
-             </div>
-
-
-
-
-
-
-
-
-            <!-- <div class="info-widgets">
-                <div class="events-widget widget-card">
-                    <h3>Events</h3>
-                    <ul class="event-list">
-                        <li>
-                            <p class="event-date">May 28</p>
-                            <p class="event-title">Annual Business Summit</p>
-                            <p class="event-time">9:00 AM - 5:00 PM</p>
-                        </li>
-                        <li>
-                            <p class="event-date">June 5</p>
-                            <p class="event-title">Networking Mixer</p>
-                            <p class="event-time">6:00 PM - 8:00 PM</p>
-                        </li>
-                        <li>
-                            <p class="event-date">July 1</p>
-                            <p class="event-title">Small Business Workshop</p>
-                            <p class="event-time">10:00 AM - 12:00 PM</p>
-                        </li>
-                        <li>
-                            <p class="event-date">July 15</p>
-                            <p class="event-title">Community Service Day</p>
-                            <p class="event-time">All Day</p>
-                        </li>
-                    </ul>
-                    <a href="#" class="more-events">See More Events <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="weather-current-widget widget-card">
-                    <h3>Current Weather</h3>
-                    <div class="weather-details">
-                        <p class="temperature">75° F <i class="fas fa-cloud-sun"></i></p>
-                        <p class="condition">Party Cloudy</p>
-                        <p>High: 85°</p>
-                        <p>Low: 52°</p>
-                        <p>Humidity: 34%</p>
-                        <p>Sunrise: 7:50am</p>
-                        <p>Sunset: 9:59pm</p>
-                    </div>
-                </div>
-
-                <div class="weather-forecast-widget widget-card">
-                    <h3>Weather Forecast</h3>
-                    <div class="forecast-details">
-                        <p>Today: <strong>90°F</strong> <i class="fas fa-sun"></i></p>
-                        <p>Wednesday: <strong>89°F</strong> <i class="fas fa-cloud-sun"></i></p>
-                        <p>Thursday: <strong>68°F</strong> <i class="fas fa-cloud-showers-heavy"></i></p>
-                    </div>
-                </div>
-            </div> -->
-
-
-            <!-- <div class="info-widgets">
-                <div class="events-widget widget-card">
-                    <h3>Events</h3>
-                    <ul class="event-list">
-                        <li>
-                            <p class="event-date">June 4</p>
-                            <p class="event-title">Annual Business Summit</p>
-                            <p class="event-time">9:00 AM - 5:00 PM</p>
-                        </li>
-                        <li>
-                            <p class="event-date">June 5</p>
-                            <p class="event-title">Networking Mixer</p>
-                            <p class="event-time">6:00 PM - 8:00 PM</p>
-                        </li>
-                        <li>
-                            <p class="event-date">July 1</p>
-                            <p class="event-title">Small Business Workshop</p>
-                            <p class="event-time">10:00 AM - 12:00 PM</p>
-                        </li>
-                        <li>
-                            <p class="event-date">July 15</p>
-                            <p class="event-title">Community Service Day</p>
-                            <p class="event-time">All Day</p>
-                        </li>
-                    </ul>
-                    <a href="#" class="more-events">See More Events <i class="fas fa-arrow-right"></i></a>
-                </div>
-            
-                <div class="weather-current-widget widget-card">
-                    <h3>Current Weather</h3>
-                    <div class="weather-details">
-                        <p class="temperature"><span id="current-temp">--</span>°C <i id="current-weather-icon"
-                                class="fas fa-question-circle"></i></p>
-                        <p class="condition" id="current-condition">Loading...</p>
-                        <p>Humidity: <span id="current-humidity">--</span>%</p>
-                        <p>Wind: <span id="current-wind-speed">--</span> km/h <span id="current-wind-direction">--</span></p>
-                        <p>Sunrise: <span id="current-sunrise">--</span></p>
-                        <p>Sunset: <span id="current-sunset">--</span></p>
-                    </div>
-                </div>
-            
-                <div class="weather-forecast-widget widget-card">
-                    <h3>Weather Forecast</h3>
-                    <div class="forecast-details">
-                        <p><span id="forecast-day1-label">Tomorrow</span>: <strong><span
-                                    id="forecast-day1-temp">--</span>°C</strong> <i id="forecast-day1-icon"
-                                class="fas fa-question-circle"></i></p>
-                        <p class="condition" id="forecast-day1-condition">Loading...</p>
-                        <p><span id="forecast-day2-label">Day 2</span>: <strong><span id="forecast-day2-temp">--</span>°C</strong>
-                            <i id="forecast-day2-icon" class="fas fa-question-circle"></i></p>
-                        <p class="condition" id="forecast-day2-condition">Loading...</p>
-                    </div>
-                </div>      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="business-cards-container">
-                <div class="business-card">
-                    <div class="business-card-top">
-                        <h4 class="business-name">Starmine Solutions Limited</h4>
-                        <p class="business-tagline">Trusted Software Engineering Company</p>
-                    </div>
-                    <div class="business-card-divider"></div>
-                    <div class="business-card-bottom">
-                        <div class="business-image-placeholder">
-                            <img src="images/waves.webp" alt="Starmine Solutions Limited Logo">
-                        </div>
-                        <div class="contact-info">
-                            <p>EMAIL: <a href="mailto:info@starminesolutions.com">info@starminesols.com</a></p>
-                            <p>PHONE: +234 903 444 1111</p>
-                            <p>PHONE: +234 907 400 4100</p>
-                            <p>URL: <a href="https://www.starminesolutions.com"
-                                    target="_blank">www.starminesolutions.com</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="business-card">
-                    <div class="business-card-top">
-                        <h4 class="business-name">JAB Digital Technologies</h4>
-                        <p class="business-tagline">Your Partner in Digital Excellence</p>
-                    </div>
-                    <div class="business-card-divider"></div>
-                    <div class="business-card-bottom">
-                        <div class="business-image-placeholder">
-                            <img src="images/tech.webp" alt="JAB Digital Technologies Logo">
-                        </div>
-                        <div class="contact-info">
-                            <p>EMAIL: <a href="mailto:info@jabdigitaltech.com">info@jabdigitaltech.com</a></p>
-                            <p>PHONE: +234 907 400 4100</p>
-                            <p>PHONE: +447 833 253 896</p>
-                            <p>URL: <a href="https://www.jabdigitaltech.com" target="_blank">jabdigitaltech.com</a></p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="business-card">
-                    <div class="business-card-top">
-                        <h4 class="business-name">Innovative Tech Solutions</h4>
-                        <p class="business-tagline">Driving the future of technology</p>
-                    </div>
-                    <div class="business-card-divider"></div>
-                    <div class="business-card-bottom">
-                        <div class="business-image-placeholder">
-                            <img src="images/techno.webp" alt="Innovative Tech Solutions Logo">
-                        </div>
-                        <div class="contact-info">
-                            <p>EMAIL: <a href="mailto:support@techsols.net">support@techsols.net</a></p>
-                            <p>PHONE: +234 908 555 1212</p>
-                            <p>PHONE: 1-800-TECH-NOW</p>
-                            <p>URL: <a href="https://www.techsolutions.net" target="_blank">www.techsolutions.net</a>
-                            </p>
-
-                        </div>
-                    </div> -->
+             </div>                
 
     </main>
 
@@ -382,8 +183,7 @@
                 <h3>Lagos Chamber of Commerce</h3>
                 <p>1001 Allen Avenue, Ikeja</p>
                 <p>Lagos, Nigeria 100271</p>
-                <p><a href="mailto:info@lagoscc.com">info@lagoscc.com</a></p>
-                <!-- <p> +234 800 123 4567</p> -->
+                <p><a href="mailto:info@lagoscc.com">info@lagoscc.com</a></p>              
             </div>
             <div class="footer-social">
                 <a href="https://www.youtube.com/watch?v=2GijSuQM5OU" target="_blank" aria-label="YouTube"><i
