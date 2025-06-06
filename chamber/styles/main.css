@@ -2,23 +2,27 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 /* --- Global Styles & Typography --- */
-:root {
-    /* Color Schema */
+:root {  
     --primary-color: #0047AB;
     --secondary-color: #FFBF00;
     --background-color: #F9F9F9;
     --text-color: #333333;
     --card-bg-color: #FFFFFF;
     --border-color: #e0e0e0;
-    --light-bg-color: #eef7ff;    
-    --text-color-dark: #444;    
-    --text-color-secondary: #777;  
+    --light-bg-color: #eef7ff;
+    --text-color-dark: #444;
+    --text-color-secondary: #777;
     --input-bg-color: #fff;
     --primary-hover-color: #0056b3;
+    --secondary-hover-color: #e6a800;    
+    --link-hover-color: var(--secondary-color);    
+    --card-shadow-initial: 0 2px 5px rgba(0, 0, 0, 0.05);   
+    --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+ 
 }
 
 body {
@@ -37,7 +41,7 @@ h6 {
     font-family: 'Roboto', sans-serif;
     color: var(--primary-color);
     margin-bottom: 0.5em;
-    line-height: 1.3;   
+    line-height: 1.3;
 }
 
 a {
@@ -46,12 +50,12 @@ a {
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--link-hover-color);
+   
 }
 
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 1rem;
 }
 
@@ -131,7 +135,7 @@ nav.main-nav a {
 }
 
 nav.main-nav a:hover {
-    color: var(--secondary-color);
+    color: var(--link-hover-color);   
 }
 
 nav.main-nav a.active::after {
@@ -155,14 +159,14 @@ nav.main-nav a.active::after {
     cursor: pointer;
     font-size: 1.8rem;
     color: var(--primary-color);
-    order: 2;   
+    order: 2;
 }
 
 /* --- Main Content Layout --- */
 main {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 1rem;    
+    padding: 1rem;
 }
 
 /* --- Directory Controls --- */
@@ -173,20 +177,45 @@ main {
     margin-bottom: 1.5rem;
 }
 
-.directory-controls button {
+/* Button Styles */
+.button,
+.directory-controls button,
+#membershipForm button[type="submit"] {
     background-color: var(--primary-color);
     color: white;
-    padding: 10px 15px;
+    padding: 10px 15px;   
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1rem;   
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;    
+    text-decoration: none;   
+    display: inline-block;   
+    text-align: center;
+   
 }
 
-.directory-controls button:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color);    
+.button:hover,
+.directory-controls button:hover,
+#membershipForm button[type="submit"]:hover {
+    background-color: var(--primary-hover-color);
+    color: var(--secondary-hover-color);  
+    transform: translateY(-2px);
+  
+}
+
+
+/* .directory-controls button {
+    
+} */
+
+#membershipForm button[type="submit"] {
+    padding: 1rem 1.5rem;   
+    font-size: 1.1rem;
+    font-weight: 700;
+    align-self: center;
+    width: auto;
+    min-width: 180px;
 }
 
 /* --- Member Container Views (Grid & List) --- */
@@ -196,26 +225,38 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Base styles for member-card (shared between grid and list) */
-.member-card {
+/* Base Card Styles */
+.card-base {
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow-initial);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.member-card:hover {
+.card-base:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--card-shadow-hover);
 }
 
+/* Apply base card styles to specific cards */
+/* .member-card,
+.widget-card,
+.business-card {
+  
+} */
+
+/* Specific styles for member-card */
+/* .member-card {
+    
+} */
+
 .member-card h3 {
-    color: var(--primary-color);    
+    color: var(--primary-color);
 }
 
 .member-card p {
-    color: #555;   
+    color: #555;
 }
 
 .member-card a {
@@ -228,13 +269,13 @@ main {
     text-decoration: underline;
 }
 
-.member-card .member-logo {   
-    border-radius: 5px;    
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);   
-    border: 1px solid var(--border-color);   
-    background-color: #fff;   
-    padding: 5px; 
-    object-fit: contain;   
+.member-card .member-logo {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+    padding: 5px;
+    object-fit: contain;
 }
 
 /* Grid View Specifics */
@@ -258,7 +299,6 @@ main {
 }
 
 .grid-view .member-card .member-logo {
-    /* Specifics for grid view logo */
     max-width: 150px;
     height: auto;
     margin: 0 auto 1rem auto;
@@ -278,12 +318,11 @@ main {
 }
 
 .list-view .member-card .member-logo {
-    /* Specifics for list view logo */
     width: 80px;
     height: 80px;
     flex-shrink: 0;
-    margin-right: 15px;    
-    margin-bottom: 0;  
+    margin-right: 15px;
+    margin-bottom: 0;
 }
 
 .list-view .member-info {
@@ -326,7 +365,7 @@ main {
     width: calc(100% - (2 * 1rem));
     height: calc(100% - (2 * 1rem));
     z-index: 1;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 .hero-image-placeholder img {
@@ -343,19 +382,15 @@ main {
     bottom: 20px;
     right: 20px;
     z-index: 10;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    background-color: var(--secondary-color);  
+    color: var(--text-color);  
+    padding: 12px 25px;}
+   
 
 .keynote-tickets-btn:hover {
-    background-color: #e6a800;   
+    background-color: var(--secondary-hover-color);  
+    color: var(--text-color);
+   
 }
 
 /* --- Home Content Headings --- */
@@ -368,26 +403,17 @@ main {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: auto; 
+    width: auto;
 }
 
 /* --- Widget Cards --- */
 .widget-card {
-    background-color: var(--card-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
     padding: 0.75rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-.widget-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    
 }
 
 .widget-card h3 {
@@ -457,6 +483,7 @@ main {
     font-size: 0.9em;
 }
 
+
 .weather-details p,
 .forecast-details p {
     margin-bottom: 0.2rem;
@@ -508,20 +535,10 @@ main {
 .business-card {
     display: flex;
     flex-direction: column;
-    background-color: var(--card-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
     text-align: left;
     min-height: 180px;
-    height: auto;
-}
-
-.business-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    height: auto;    
 }
 
 .business-card-top {
@@ -532,7 +549,7 @@ main {
     align-items: center;
     padding: 0.5rem 1rem;
     box-sizing: border-box;
-    text-align: center; 
+    text-align: center;
 }
 
 .business-card h4.business-name {
@@ -567,7 +584,7 @@ main {
 
 .business-image-placeholder {
     width: 100px;
-    height: 100%;  
+    height: 100%;
     flex-shrink: 0;
     margin-right: 1rem;
     display: flex;
@@ -601,7 +618,7 @@ main {
 }
 
 .contact-info a:hover {
-    color: var(--secondary-color);
+    color: var(--link-hover-color);   
 }
 
 .business-card p {
@@ -651,7 +668,7 @@ footer {
 
 .footer-contact a:hover,
 .footer-info a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-hover-color);   
 }
 
 .footer-social {
@@ -669,7 +686,7 @@ footer {
 }
 
 .footer-social a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-hover-color);   
 }
 
 .footer-info p {
@@ -689,7 +706,7 @@ footer {
     }
 
     .header-content {
-        flex-wrap: nowrap;      
+        flex-wrap: nowrap;
     }
 
     .logo {
@@ -703,7 +720,7 @@ footer {
     }
 
     nav.main-nav {
-        display: none;       
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -743,7 +760,7 @@ footer {
     }
 
     nav.main-nav.active {
-        display: flex;        
+        display: flex;
     }
 
     .search-icon {
@@ -751,13 +768,13 @@ footer {
     }
 
     .hamburger-menu {
-        display: block;        
+        display: block;
         margin-left: 15px;
-        order: -1;        
+        order: -1;
     }
 
     main {
-        padding: 1rem;      
+        padding: 1rem;
     }
 
     .hero-image-placeholder {
@@ -798,22 +815,22 @@ footer {
         text-align: center;
     }
 
-    .list-view .member-card .member-logo {       
+    .list-view .member-card .member-logo {
         margin-bottom: 1rem;
-        margin-right: 0;       
+        margin-right: 0;
     }
 
     .business-card {
         height: auto;
         min-height: auto;
         flex-direction: column;
-        padding: 0;
+        padding: 0;        
     }
 
     .business-card-top {
         flex: none;
         height: auto;
-        padding: 0.75rem 1rem;       
+        padding: 0.75rem 1rem;
     }
 
     .business-card-divider {
@@ -821,7 +838,7 @@ footer {
     }
 
     .business-card-bottom {
-        flex-direction: row;       
+        flex-direction: row;
         align-items: center;
         justify-content: flex-start;
         padding: 0.75rem 1rem 1rem;
@@ -833,17 +850,17 @@ footer {
         width: 80px;
         height: 80px;
         margin-right: 1rem;
-        margin-bottom: 0;      
-        align-self: center;        
+        margin-bottom: 0;
+        align-self: center;
         justify-content: center;
         align-items: center;
         padding: 0.5rem;
     }
-  
+
 
     .contact-info {
         flex-grow: 1;
-        align-self: center;       
+        align-self: center;
         text-align: left;
     }
 
@@ -862,10 +879,10 @@ footer {
     }
 
     .join-info ul li {
-        margin-right: 5px;        
+        margin-right: 5px;
     }
 
-    
+
 }
 
 @media (max-width: 480px) {
@@ -915,7 +932,7 @@ footer {
     list-style-position: outside;
 }
 
-.join-info h1{
+.join-info h1 {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -924,9 +941,9 @@ footer {
 
 
 
-.join-form-section {   
-    max-width: 600px;   
-    margin: 2rem auto;   
+.join-form-section {
+    max-width: 600px;
+    margin: 2rem auto;
     padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -952,9 +969,9 @@ footer {
 
 #membershipForm label {
     font-weight: bold;
-    margin-bottom: 0.2rem;  
+    margin-bottom: 0.2rem;
     display: block;
-    
+
 }
 
 .membership-card {
@@ -975,32 +992,32 @@ dialog {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    max-width: 500px;   
-    width: 90%;   
-    position: fixed;  
+    max-width: 500px;
+    width: 90%;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;   
+    z-index: 1000;
 }
 
 /* Backdrop for the dialog */
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-  
+
 }
 
 #dialogContent {
     margin-bottom: 20px;
     line-height: 1.6;
-    max-height: 70vh;   
+    max-height: 70vh;
     overflow-y: auto;
-   
+
 }
 
 #dialogContent h3 {
-    color: var(--primary-color);  
+    color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 15px;
 }
@@ -1015,20 +1032,20 @@ dialog::backdrop {
 }
 
 #closeButton {
-    background-color: var(--secondary-color);   
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    display: block;  
-    margin: 0 auto; 
+    display: block;
+    margin: 0 auto;
     transition: background-color 0.3s ease;
 }
 
 #closeButton:hover {
-    background-color: #54843b;
+    background-color: var(--secondary-hover-color); 
     opacity: 0.9;
 }
 
@@ -1038,22 +1055,18 @@ dialog::backdrop {
     margin-left: 0.2rem;
 }
 
+ /* Grouped input styles */
 #membershipForm input:not([type="hidden"]),
 #membershipForm select,
 #membershipForm textarea {
     width: 100%;
-    
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-   
     font-size: 1rem;
     line-height: 1.5;
-   
 }
-
-
 
 #membershipForm input:focus,
 #membershipForm select:focus,
@@ -1067,28 +1080,6 @@ dialog::backdrop {
     resize: vertical;
     min-height: 80px;
 }
-
-#membershipForm button[type="submit"] {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    align-self: center;
-    width: auto;
-    min-width: 180px;
-}
-
-#membershipForm button[type="submit"]:hover {
-    background-color: var(--primary-hover-color);
-    transform: translateY(-2px);
-    color: #e6a800;
-}
-
 
 
 #formMessage {
@@ -1121,6 +1112,7 @@ dialog::backdrop {
         font-size: 1.5rem;
     }
 
+    /* Grouped specific input styles for small screens */
     #membershipForm input[type="text"],
     #membershipForm input[type="email"],
     #membershipForm input[type="tel"],
@@ -1215,9 +1207,9 @@ dialog::backdrop {
 }
 
 .discover-section li::before {
-    content: "\2022";    
-    font-family: 'Font Awesome 5 Free';   
-    font-weight: 900;    
+    content: "\2022";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
     color: var(--primary-color);
     position: absolute;
     left: 0;
@@ -1228,7 +1220,7 @@ dialog::backdrop {
     color: var(--primary-color);
 }
 
-/* --- Image Gallery  --- */
+/* --- Image Gallery   --- */
 #image-montage .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1244,7 +1236,7 @@ dialog::backdrop {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;   
+    border-radius: 10px 10px 0 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
@@ -1265,7 +1257,7 @@ dialog::backdrop {
     border-top: 1px solid var(--border-color);
 }
 
-/* --- Responsive adjustments  --- */
+/* --- Responsive adjustments   --- */
 @media (max-width: 768px) {
     .main-discover-intro h1 {
         font-size: 2.2rem;
@@ -1301,8 +1293,8 @@ dialog::backdrop {
 .thank-you-page {
     display: flex;
     justify-content: center;
-    align-items: flex-start;   
-    min-height: 70vh;  
+    align-items: flex-start;
+    min-height: 70vh;
     padding: 2rem;
     background-color: #f8f8f8;
 }
@@ -1313,13 +1305,13 @@ dialog::backdrop {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     max-width: 700px;
-    text-align: center;   
+    text-align: center;
     margin: 2rem auto;
-   
+
 }
 
 .thank-you-content h1 {
-    color: var(--primary-color); 
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 2.2em;
 }
@@ -1339,7 +1331,7 @@ dialog::backdrop {
 }
 
 .thank-you-content a {
-    color: var(--primary-color);   
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -1349,17 +1341,17 @@ dialog::backdrop {
 }
 
 .submission-details {
-    background-color: #e9f7e9;   
+    background-color: #e9f7e9;
     border: 1px solid #c8e6c9;
     border-radius: 8px;
     padding: 1.5rem;
     margin-top: 1.5rem;
     text-align: left;
-   
+
 }
 
 .submission-details ul {
-    list-style: none;   
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -1372,42 +1364,25 @@ dialog::backdrop {
 
 .submission-details li strong {
     color: #1a4d2e;
-   
+
 }
 
 .back-home-link {
     margin-top: 2.5rem;
 }
 
+
 .back-home-link .button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--primary-color);   
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 1rem 2rem;  
     font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    color: white;
+   
 }
+
 
 .back-home-link .button:hover {
     background-color: var(--primary-hover-color);
     transform: translateY(-2px);
-        color: #e6a800;
-}
-
-
-@media (max-width: 600px) {
-    .thank-you-content {
-        padding: 1.5rem;
-        margin: 1rem;
-    }
-
-    .thank-you-content h1 {
-        font-size: 1.8em;
-    }
-
-    .thank-you-content h2 {
-        font-size: 1.4em;
-    }
+    color: var(--secondary-hover-color);
+    
 }
