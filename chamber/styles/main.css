@@ -915,59 +915,138 @@ footer {
     list-style-position: outside;
 }
 
-.join-form-section {
-    background-color: var(--card-bg-color);
-    padding: 2rem;
+
+
+.join-form-section {   
+    max-width: 600px;   
+    margin: 2rem auto;   
+    padding: 1.5rem;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    max-width: 700px;
-    margin: 2rem auto;
-    border: 1px solid var(--border-color);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .join-form-section h3 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 #membershipForm {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
+
 #membershipForm label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;  
     display: block;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-    color: var(--text-color);
-    font-size: 0.95rem;
+    
 }
+
+.membership-card {
+    margin-bottom: 2rem;
+}
+
+
+.membership-card a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* In your styles/main.css */
+
+dialog {
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 500px;   
+    width: 90%;   
+    position: fixed;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;   
+}
+
+/* Backdrop for the dialog */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+  
+}
+
+#dialogContent {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-height: 70vh;   
+    overflow-y: auto;
+   
+}
+
+#dialogContent h3 {
+    color: var(--primary-color);  
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#dialogContent ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+#dialogContent li {
+    margin-bottom: 5px;
+}
+
+#closeButton {
+    background-color: var(--secondary-color);   
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: block;  
+    margin: 0 auto; 
+    transition: background-color 0.3s ease;
+}
+
+#closeButton:hover {
+    background-color: darken(var(--secondary-color), 10%);    
+    opacity: 0.9;
+}
+
 
 #membershipForm label span {
     color: #dc3545;
     margin-left: 0.2rem;
 }
 
-#membershipForm input[type="text"],
-#membershipForm input[type="email"],
-#membershipForm input[type="tel"],
+#membershipForm input:not([type="hidden"]),
 #membershipForm select,
 #membershipForm textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: var(--input-bg-color);
+    
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   
+    font-size: 1rem;
+    line-height: 1.5;
+   
 }
+
+
 
 #membershipForm input:focus,
 #membershipForm select:focus,
@@ -1000,7 +1079,10 @@ footer {
 #membershipForm button[type="submit"]:hover {
     background-color: var(--primary-hover-color);
     transform: translateY(-2px);
+    color: #e6a800;
 }
+
+
 
 #formMessage {
     margin-top: 1.5rem;
@@ -1203,5 +1285,122 @@ footer {
 
     #image-montage .image-gallery img {
         height: 180px;
+    }
+}
+
+
+/* --- Styles for the Thank You Page --- */
+
+.thank-you-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;   
+    min-height: 70vh;  
+    padding: 2rem;
+    background-color: #f8f8f8;
+}
+
+.thank-you-content {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    text-align: center;   
+    margin: 2rem auto;
+   
+}
+
+.thank-you-content h1 {
+    color: var(--primary-color); 
+    margin-bottom: 1.5rem;
+    font-size: 2.2em;
+}
+
+.thank-you-content h2 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.6em;
+}
+
+.thank-you-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.thank-you-content a {
+    color: var(--primary-color);   
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.thank-you-content a:hover {
+    text-decoration: underline;
+}
+
+.submission-details {
+    background-color: #e9f7e9;   
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: left;
+   
+}
+
+.submission-details ul {
+    list-style: none;   
+    padding: 0;
+    margin: 0;
+}
+
+.submission-details li {
+    margin-bottom: 0.5rem;
+    font-size: 1em;
+    color: #333;
+}
+
+.submission-details li strong {
+    color: #1a4d2e;
+   
+}
+
+.back-home-link {
+    margin-top: 2.5rem;
+}
+
+.back-home-link .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);   
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.back-home-link .button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+        color: #e6a800;
+}
+
+
+@media (max-width: 600px) {
+    .thank-you-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .thank-you-content h1 {
+        font-size: 1.8em;
+    }
+
+    .thank-you-content h2 {
+        font-size: 1.4em;
     }
 }

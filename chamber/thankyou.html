@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Thank you for your membership application to the Lagos Chamber of Commerce.">
+    <meta name="author" content="Ebenezer John">
+    <title>Thank You | Lagos Chamber of Commerce</title>
+
+    <meta property="og:title" content="Thank You | Lagos Chamber of Commerce" />
+    <meta property="og:description"
+        content="Your membership application has been submitted to the Lagos Chamber of Commerce." />
+    <meta property="og:image" content="https://rbennyjay.github.io/wdd231/images/og-image.jpg" />
+    <meta property="og:url" content="https://rbennyjay.github.io/wdd231/chamber/thankyou.html" />
+    <meta property="og:type" content="website" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/direct.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <svg class="chamber-logo" width="50" height="50" viewBox="0 0 512 512"
+                    preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+                        <path class="logo-path-1" d="M3185 5113 c-509 -62 -928 -264 -1281 -617 -318 -318 -511 -684 -595
+                            -1131 -30 -157 -37 -494 -15 -660 90 -652 454 -1204 1023 -1554 294 -180 702
+                            -299 1031 -301 l72 0 -2 218 -3 217 -105 6 c-238 14 -443 70 -662 181 -449
+                            227 -771 637 -892 1133 -58 239 -53 553 13 812 105 410 381 784 748 1012 253
+                            157 492 231 826 257 l77 6 0 214 0 214 -102 -1 c-57 -1 -116 -4 -133 -6z" />
+                        <path class="logo-path-2" d="M3260 4263 c-179 -28 -292 -63 -434 -136 -341 -174 -588 -497 -671
+                            -877 -25 -117 -31 -335 -11 -458 94 -586 556 -1023 1145 -1082 57 -5 109 -10
+                            117 -10 12 0 14 39 14 220 l0 220 -45 0 c-25 0 -81 7 -123 16 -331 68 -585
+                            314 -663 642 -30 123 -23 320 15 437 86 267 294 475 561 561 117 38 314 45
+                            437 15 328 -78 574 -332 642 -663 9 -42 16 -98 16 -123 l0 -45 221 0 221 0 -7
+                            78 c-28 336 -140 593 -357 818 -249 258 -580 397 -935 393 -65 -1 -129 -4
+                            -143 -6z" />
+                        <path class="logo-path-3" d="M424 2868 c25 -449 118 -815 301 -1193 476 -978 1463 -1630 2533
+                            -1672 l162 -6 0 215 0 215 -122 7 c-248 14 -540 73 -754 151 -55 20 -171 71
+                            -259 114 -829 407 -1378 1241 -1422 2162 l-6 129 -220 0 -220 0 7 -122z" />
+                    </g>
+                </svg>
+                <div class="site-title">
+                    <span class="city-name">Lagos</span>
+                    <span class="chamber-label">Chamber of Commerce</span>
+                </div>
+            </div>
+            <div class="header-right-group">
+                <nav class="main-nav" aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="directory.html">Directory</a></li>
+                        <li><a href="join.html">Join</a></li>
+                        <li><a href="discover.html">Discover</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="thank-you-page">
+        <section class="thank-you-content">
+            <h1>Thank You for Your Application!</h1>
+            <p>Your membership application has been successfully submitted to the Lagos Chamber of Commerce.</p>
+            <p>We appreciate your interest in joining our community. Our team will review your application and get back
+                to you shortly.</p>
+            <p>In the meantime, feel free to explore our <a href="directory.html">member directory</a> or learn more
+                about <a href="discover.html">Lagos</a>.</p>
+
+            <h2>Submission Details:</h2>
+            <div id="formSubmissionDetails" class="submission-details">
+                <p>Loading submission details...</p>
+            </div>
+
+            <div class="back-home-link">
+                <a href="index.html" class="button">Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-contact">
+                <h3>Lagos Chamber of Commerce</h3>
+                <p>1001 Allen Avenue, Ikeja</p>
+                <p>Lagos, Nigeria 100271</p>
+                <p><a href="mailto:info@lagoscc.com">info@lagoscc.com</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/watch?v=2GijSuQM5OU" target="_blank" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://x.com/RealBennyjay" target="_blank" aria-label="X (formerly Twitter)"><i
+                        class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/ebenezerjohn1" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-info">
+                <h3>WDD231 Class Project</h3>
+                <p>Ebenezer John</p>
+                <p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+                <p id="last-mode">Last Modification: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

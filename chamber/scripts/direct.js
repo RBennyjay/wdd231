@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('directory.js loaded (consolidated)');
+    console.log('direct.js loaded (consolidated)');
 
     // --- Global Elements Caching ---
     const lastModifiedSpan = document.getElementById('lastModified');
+    const yearSpan = document.getElementById('year');
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.main-nav');
     const mainContent = document.querySelector('main');
@@ -10,14 +11,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const membersContainer = document.getElementById("membersContainer");
     const gridBtn = document.getElementById("gridBtn");
     const listBtn = document.getElementById("listBtn");
+    const formSubmissionDetails = document.getElementById('formSubmissionDetails');
+
+    // --- MODAL ELEMENTS FOR DYNAMIC CONTENT ---
+    const dialogBox = document.querySelector("#dialogBox");
+    const closeButton = document.querySelector("#closeButton");
+    const dialogContent = document.querySelector("#dialogContent"); 
+
 
     // --- Last Modified Date Logic ---
     if (lastModifiedSpan) {
         lastModifiedSpan.textContent = document.lastModified;
     }
 
+    // --- Current Year Logic ---
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
     // --- Hamburger Menu Logic ---
-    if (hamburger && navMenu && mainContent && hamburgerIcon) {         
+    if (hamburger && navMenu && mainContent && hamburgerIcon) {
         const toggleMenu = () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('open');
@@ -26,31 +39,29 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburgerIcon.classList.remove(isMenuOpen ? 'fa-bars' : 'fa-times');
             hamburgerIcon.classList.add(isMenuOpen ? 'fa-times' : 'fa-bars');
 
-            // Adjust main content margin only on smaller screens
             if (window.innerWidth <= 768) {
                 mainContent.style.marginTop = isMenuOpen ? `${navMenu.offsetHeight}px` : '0';
             } else {
-                mainContent.style.marginTop = '0'; 
+                mainContent.style.marginTop = '0';
             }
         };
 
         hamburger.addEventListener('click', toggleMenu);
 
-        // Close menu when a nav link is clicked (for mobile usability)
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {                 
+            link.addEventListener('click', () => {
                 if (navMenu.classList.contains('active')) {
-                    toggleMenu(); 
+                    toggleMenu();
                 }
             });
         });
 
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
-                if (navMenu.classList.contains('active')) { 
-                    toggleMenu(); 
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
                 }
-                mainContent.style.marginTop = '0'; 
+                mainContent.style.marginTop = '0';
             }
         });
     }
@@ -75,20 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayMembers(members) {
-        membersContainer.innerHTML = ""; 
+        membersContainer.innerHTML = "";
         members.forEach(member => {
             const card = document.createElement("div");
             card.classList.add("member-card");
-            
-            // Add class for specific membership levels for styling 
+
             let membershipClass = '';
             if (member.membership === 1) membershipClass = 'gold-member';
             else if (member.membership === 2) membershipClass = 'silver-member';
-            else if (member.membership === 3) membershipClass = 'bronze-member'; // Or 'standard-member'
+            else if (member.membership === 3) membershipClass = 'bronze-member';
             if (membershipClass) card.classList.add(membershipClass);
 
             card.innerHTML = `
-                <img src="${member.image}" alt="${member.name} logo" loading="lazy" 
+                <img src="${member.image}" alt="${member.name} logo" loading="lazy"
                      width="150" height="150" class="member-logo" />
                 <h3>${member.name}</h3>
                 <p>${member.description}</p>
@@ -100,21 +110,35 @@ document.addEventListener('DOMContentLoaded', function() {
             membersContainer.appendChild(card);
         });
 
-        //  initial view is set after loading members
         if (!membersContainer.classList.contains('grid-view') && !membersContainer.classList.contains('list-view')) {
-            membersContainer.classList.add('grid-view'); 
+            membersContainer.classList.add('grid-view');
         }
     }
 
     // --- Membership Level Mapping ---
-    // Assuming: 1 = Gold, 2 = Silver, 3 = Bronze (or Standard)
     function getMembershipLevel(level) {
         switch (level) {
             case 1: return "Gold";
             case 2: return "Silver";
-            case 3: return "Bronze"; 
-            default: return "Standard Member"; // For any other unexpected values
+            case 3: return "Bronze";
+            default: return "Standard Member";
         }
+    }
+
+    // Close dialog box when the close button is clicked 
+    if (closeButton && dialogBox) {
+        closeButton.addEventListener("click", () => {
+            dialogBox.close(); 
+        });
+    }
+
+    // Close dialog if clicking outside (backdrop click)
+    if (dialogBox) {
+        dialogBox.addEventListener('click', (e) => {
+            if (e.target === dialogBox) {
+                dialogBox.close();
+            }
+        });
     }
 
     // --- View Toggle Buttons Logic ---
@@ -129,6 +153,50 @@ document.addEventListener('DOMContentLoaded', function() {
             membersContainer.classList.remove("grid-view");
         });
     }
-// Initiate loading of members 
-    loadMembers(); 
+
+    // --- MODAL LOGIC globally accessible for onclick ---
+    window.openModal = function(modalId, contentHtml) {
+        const modal = document.getElementById(modalId);
+        if (modal && dialogContent) { 
+            dialogContent.innerHTML = contentHtml; 
+            modal.showModal(); 
+        } else {
+            console.error(`Modal with ID ${modalId} or dialogContent not found.`);
+        }
+    };
+
+    // --- Thank You Page Logic ---
+    if (formSubmissionDetails && window.location.search) {        
+        const params = new URLSearchParams(window.location.search);      
+
+        let detailsHtml = '<ul>';
+        let hasDetailsToDisplay = false; 
+
+        params.forEach((value, key) => {
+            if (key !== 'timestamp') { 
+                const displayKey = key.charAt(0).toUpperCase() + key.slice(1);
+                detailsHtml += `<li><strong>${displayKey}:</strong> ${decodeURIComponent(value)}</li>`;
+                hasDetailsToDisplay = true; 
+            }
+        });
+        detailsHtml += '</ul>';
+
+        
+
+        if (hasDetailsToDisplay) {            
+            formSubmissionDetails.innerHTML = ''; 
+            formSubmissionDetails.innerHTML += detailsHtml; 
+            
+        } else {
+            formSubmissionDetails.innerHTML = '<p>No specific submission details found (or all were timestamps).</p>';
+          
+        }
+    } else {
+      
+    }
+
+    // Initiate loading of members 
+    if (membersContainer) {
+        loadMembers();
+    }
 });
