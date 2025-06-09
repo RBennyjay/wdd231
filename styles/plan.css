@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #007BFF;
+    /* A shade of blue for primary elements */
+    --secondary-color: #F8F9FA;
+    /* A light grey for backgrounds and secondary elements */
+    --text-color: #343A40;
+    /* Dark grey for general text */
+    --accent-color: #28A745;
+    /* Green for accents, like "For Sale" tags */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Specific classes for color boxes */
+.primary-color-box {
+    background-color: var(--primary-color);
+}
+
+.secondary-color-box {
+    background-color: var(--secondary-color);
+}
+
+.text-color-box {
+    background-color: var(--text-color);
+}
+
+.accent-color-box {
+    background-color: var(--accent-color);
+}
+
+/* Typography classes */
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.wireframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.wireframe {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f0f0f0;
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.wireframe h3 {
+    margin-top: 0;
+}
+
+.wireframe-placeholder {
+    border: 1px dashed #666;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Specific styling for wireframe elements */
+.header-placeholder {
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-placeholder {
+    height: 40px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-placeholder {
+    height: 150px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-block-placeholder {
+    height: 100px;
+    background-color: #eee;
+}
+
+.footer-placeholder {
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar-placeholder {
+    height: 40px;
+    background-color: #e0e0e0;
+    border: 1px solid #aaa;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.property-card-placeholder {
+    height: 120px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.property-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows items to wrap to the next line */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.property-card-grid>.wireframe-placeholder {
+    flex: 1;
+    min-width: calc(33.33% - 10px);
+    /* Adjust for 3 columns on larger screens, accounting for gap */
+    max-width: calc(33.33% - 10px);
+}
+
+
+@media (max-width: 768px) {
+    .wireframe-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .property-card-grid>.wireframe-placeholder {
+        min-width: 100%;
+        /* Full width on smaller screens */
+        max-width: 100%;
+    }
+}
