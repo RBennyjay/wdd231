@@ -1,16 +1,13 @@
 /* Medium screens (769px and above for desktop menu) */
-@media (min-width: 769px) {
-    /* Changed from 641px */
-
-    /* Adjust header and navigation for medium screens */
+@media (min-width: 769px) { 
+    
     .hamburger-menu {
         display: none;
-        /* Hide hamburger from 769px upwards */
+       
     }
 
     .main-nav ul {
-        display: flex;
-        /* Show desktop menu from 769px upwards */
+        display: flex;        
     }
 
     /* Grid Areas for medium screens */
@@ -51,11 +48,9 @@
 
 /* Large screens (1025px and above) */
 @media (min-width: 1025px) {
-
-    /* ... your existing large screen styles ... */
+   
     .discover-grid-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-
         grid-template-areas:
             "intro intro intro intro"
             "history history demographics demographics"
@@ -64,7 +59,7 @@
             "montage montage montage montage";
     }
 
-    /* Adjust specific elements for large screen layout */
+   
     .main-discover-intro {
         text-align: center;
     }
