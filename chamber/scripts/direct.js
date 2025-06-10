@@ -36,8 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.toggle('open');
 
             const isMenuOpen = hamburger.classList.contains('open');
-            hamburgerIcon.classList.remove(isMenuOpen ? 'fa-bars' : 'fa-times');
-            hamburgerIcon.classList.add(isMenuOpen ? 'fa-times' : 'fa-bars');
+            hamburgerIcon.classList.toggle('fa-bars');
+            hamburgerIcon.classList.toggle('fa-times');
+
+            // hamburgerIcon.classList.remove(isMenuOpen ? 'fa-bars' : 'fa-times');
+            // hamburgerIcon.classList.add(isMenuOpen ? 'fa-times' : 'fa-bars');
 
             if (window.innerWidth <= 768) {
                 mainContent.style.marginTop = isMenuOpen ? `${navMenu.offsetHeight}px` : '0';

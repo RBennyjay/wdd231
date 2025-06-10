@@ -1,0 +1,81 @@
+/* Medium screens (769px and above for desktop menu) */
+@media (min-width: 769px) {
+    /* Changed from 641px */
+
+    /* Adjust header and navigation for medium screens */
+    .hamburger-menu {
+        display: none;
+        /* Hide hamburger from 769px upwards */
+    }
+
+    .main-nav ul {
+        display: flex;
+        /* Show desktop menu from 769px upwards */
+    }
+
+    /* Grid Areas for medium screens */
+    .discover-grid-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "visitor visitor"
+            "intro intro"
+            "history places"
+            "demographics places"
+            "events places"
+            "montage montage";
+    }
+
+    /* Adjust placement for specific sections */
+    .visitor-message {
+        margin-bottom: 0;
+    }
+
+    /* Grid for the 8 interest cards */
+    .interest-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* Image gallery layout for medium screens */
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Apply hover effect to images in the image-gallery */
+    .image-gallery img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+        cursor: zoom-in;
+    }
+}
+
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+
+    /* ... your existing large screen styles ... */
+    .discover-grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        grid-template-areas:
+            "intro intro intro intro"
+            "history history demographics demographics"
+            "events events visitor visitor"
+            "places places places places"
+            "montage montage montage montage";
+    }
+
+    /* Adjust specific elements for large screen layout */
+    .main-discover-intro {
+        text-align: center;
+    }
+
+    /* Grid for the 8 interest cards */
+    .interest-cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Image gallery layout for large screens */
+    .image-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

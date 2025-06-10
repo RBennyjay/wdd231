@@ -6,7 +6,7 @@
 }
 
 /* --- Global Styles & Typography --- */
-:root {  
+:root {
     --primary-color: #0047AB;
     --secondary-color: #FFBF00;
     --background-color: #F9F9F9;
@@ -18,11 +18,10 @@
     --text-color-secondary: #777;
     --input-bg-color: #fff;
     --primary-hover-color: #0056b3;
-    --secondary-hover-color: #e6a800;    
-    --link-hover-color: var(--secondary-color);    
-    --card-shadow-initial: 0 2px 5px rgba(0, 0, 0, 0.05);   
+    --secondary-hover-color: #e6a800;
+    --link-hover-color: var(--secondary-color);
+    --card-shadow-initial: 0 2px 5px rgba(0, 0, 0, 0.05);
     --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
- 
 }
 
 body {
@@ -47,15 +46,16 @@ h6 {
 a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     color: var(--link-hover-color);
-   
 }
 
-
 .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 1rem;
 }
 
@@ -66,6 +66,9 @@ header {
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    /* Keep for potential height changes */
 }
 
 .header-content {
@@ -73,6 +76,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    /* Allows wrapping on smaller screens if needed for overall layout */
 }
 
 .logo {
@@ -121,24 +125,44 @@ header {
     gap: 20px;
 }
 
-nav.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* Desktop navigation styles */
+nav.main-nav {
+    /* No direct display:flex or list-style:none here, as it contains a UL */
+    margin: 0;
+    padding: 0;
 }
 
-nav.main-nav a {
+nav.main-nav ul {
+    list-style: none;
+    /* Correctly removes bullets from the UL */
+    display: flex;
+    /* Makes the LI elements display horizontally */
+    gap: 20px;
+    /* Spacing between LI elements */
+    margin: 0;
+    padding: 0;
+}
+
+nav.main-nav ul li {
+    /* flex or block, depending on desired hover area */
+    display: flex;
+    align-items: center;
+    /* Vertically align content if height varies */
+}
+
+nav.main-nav ul li a {
     font-weight: 600;
     padding: 5px 0;
+    /* Padding for click area */
     position: relative;
     color: var(--primary-color);
 }
 
-nav.main-nav a:hover {
-    color: var(--link-hover-color);   
+nav.main-nav ul li a:hover {
+    color: var(--link-hover-color);
 }
 
-nav.main-nav a.active::after {
+nav.main-nav ul li a.active::after {
     content: '';
     position: absolute;
     left: 0;
@@ -154,12 +178,16 @@ nav.main-nav a.active::after {
     cursor: pointer;
 }
 
+/* Hamburger menu (hidden by default on desktop) */
 .hamburger-menu {
     display: none;
+    /* Hidden on large screens */
     cursor: pointer;
     font-size: 1.8rem;
+    /* Consistent size */
     color: var(--primary-color);
-    order: 2;
+    z-index: 1001;
+    /* Ensure it's above other elements if needed */
 }
 
 /* --- Main Content Layout --- */
@@ -180,37 +208,32 @@ main {
 /* Button Styles */
 .button,
 .directory-controls button,
-#membershipForm button[type="submit"] {
+#membershipForm button[type="submit"],
+.interest-card .learn-more-btn {
     background-color: var(--primary-color);
     color: white;
-    padding: 10px 15px;   
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;   
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;    
-    text-decoration: none;   
-    display: inline-block;   
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
     text-align: center;
-   
 }
 
 .button:hover,
 .directory-controls button:hover,
-#membershipForm button[type="submit"]:hover {
+#membershipForm button[type="submit"]:hover,
+.interest-card .learn-more-btn:hover {
     background-color: var(--primary-hover-color);
-    color: var(--secondary-hover-color);  
+    color: var(--secondary-hover-color);
     transform: translateY(-2px);
-  
 }
 
-
-/* .directory-controls button {
-    
-} */
-
 #membershipForm button[type="submit"] {
-    padding: 1rem 1.5rem;   
+    padding: 1rem 1.5rem;
     font-size: 1.1rem;
     font-weight: 700;
     align-self: center;
@@ -225,13 +248,14 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Base Card Styles */
+/* Base Card Styles - */
 .card-base {
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: var(--card-shadow-initial);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
 }
 
 .card-base:hover {
@@ -239,17 +263,10 @@ main {
     box-shadow: var(--card-shadow-hover);
 }
 
-/* Apply base card styles to specific cards */
-/* .member-card,
-.widget-card,
-.business-card {
-  
-} */
-
 /* Specific styles for member-card */
-/* .member-card {
-    
-} */
+.member-card {
+    /* Inherits .card-base */
+}
 
 .member-card h3 {
     color: var(--primary-color);
@@ -349,7 +366,7 @@ main {
     width: 100%;
     height: 350px;
     background-color: transparent;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -382,15 +399,14 @@ main {
     bottom: 20px;
     right: 20px;
     z-index: 10;
-    background-color: var(--secondary-color);  
-    color: var(--text-color);  
-    padding: 12px 25px;}
-   
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 12px 25px;
+}
 
 .keynote-tickets-btn:hover {
-    background-color: var(--secondary-hover-color);  
+    background-color: var(--secondary-hover-color);
     color: var(--text-color);
-   
 }
 
 /* --- Home Content Headings --- */
@@ -413,7 +429,6 @@ main {
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
-    
 }
 
 .widget-card h3 {
@@ -483,7 +498,6 @@ main {
     font-size: 0.9em;
 }
 
-
 .weather-details p,
 .forecast-details p {
     margin-bottom: 0.2rem;
@@ -538,7 +552,7 @@ main {
     overflow: hidden;
     text-align: left;
     min-height: 180px;
-    height: auto;    
+    height: auto;
 }
 
 .business-card-top {
@@ -618,7 +632,7 @@ main {
 }
 
 .contact-info a:hover {
-    color: var(--link-hover-color);   
+    color: var(--link-hover-color);
 }
 
 .business-card p {
@@ -629,8 +643,10 @@ main {
 footer {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 1rem 0 0.5rem 0;
+    padding: 1.5rem 0 1rem 0;
     font-size: 0.9rem;
+    margin-top: 0;
+    text-align: center;
 }
 
 .footer-content {
@@ -639,7 +655,7 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0;
 }
 
 .footer-contact,
@@ -654,6 +670,7 @@ footer {
     color: var(--secondary-color);
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .footer-contact p {
@@ -663,12 +680,13 @@ footer {
 .footer-contact a,
 .footer-info a {
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .footer-contact a:hover,
 .footer-info a:hover {
-    color: var(--secondary-hover-color);   
+    color: var(--secondary-hover-color);
+    text-decoration: underline;
 }
 
 .footer-social {
@@ -686,7 +704,7 @@ footer {
 }
 
 .footer-social a:hover {
-    color: var(--secondary-hover-color);   
+    color: var(--secondary-hover-color);
 }
 
 .footer-info p {
@@ -707,6 +725,8 @@ footer {
 
     .header-content {
         flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .logo {
@@ -719,7 +739,17 @@ footer {
         margin-bottom: 0;
     }
 
+    /* Mobile navigation */
+    .hamburger-menu {
+        display: block;
+        /* Show hamburger on mobile */
+        margin-left: 15px;
+        order: 2;
+        /* Position it correctly, adjust if needed based on HTML structure */
+    }
+
     nav.main-nav {
+        /* On mobile, the entire nav container is hidden/shown */
         display: none;
         position: absolute;
         top: 100%;
@@ -727,50 +757,55 @@ footer {
         width: 100%;
         background-color: var(--card-bg-color);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        flex-direction: column;
+        z-index: 999;
         padding: 1rem 0;
-    }
-
-    nav.main-nav ul {
-        flex-direction: column;
-        gap: 5px;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav.main-nav ul li {
-        width: 100%;
-    }
-
-    nav.main-nav a {
-        display: block;
-        padding: 10px 0;
-        border-bottom: 1px solid var(--border-color);
-        transition: background-color 0.3s ease, color 0.3s ease;
-        color: var(--primary-color);
-    }
-
-    nav.main-nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    nav.main-nav a.active::after {
-        bottom: 0;
     }
 
     nav.main-nav.active {
         display: flex;
+        /* Show menu when active */
+    }
+
+    /* Target the UL within the nav for mobile styling */
+    nav.main-nav ul {
+        flex-direction: column;
+        /* Stack items vertically */
+        width: 100%;
+        gap: 0;
+        /* Remove gap between stacked items */
+    }
+
+    /* Target the LI within the UL for mobile */
+    nav.main-nav ul li {
+        width: 100%;
+        display: block;
+        /* Make list items take full width */
+    }
+
+    /* Target the A tag inside LI for full-width click area and borders */
+    nav.main-nav ul li a {
+        display: block;
+        /* Make anchor fill its parent li */
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: var(--primary-color);
+        text-align: center;
+        /* Center menu items */
+    }
+
+    nav.main-nav ul li:last-child a {
+        /* Targets the last anchor in the nav */
+        border-bottom: none;
+    }
+
+    nav.main-nav ul li a.active::after {
+        bottom: 0;
+        height: 1px;
     }
 
     .search-icon {
         margin-left: 0;
-    }
-
-    .hamburger-menu {
-        display: block;
-        margin-left: 15px;
-        order: -1;
     }
 
     main {
@@ -824,7 +859,7 @@ footer {
         height: auto;
         min-height: auto;
         flex-direction: column;
-        padding: 0;        
+        padding: 0;
     }
 
     .business-card-top {
@@ -857,17 +892,16 @@ footer {
         padding: 0.5rem;
     }
 
-
     .contact-info {
         flex-grow: 1;
         align-self: center;
         text-align: left;
     }
 
-    /* Hover effect for mobile nav */
-    header nav.main-nav a:hover,
-    header nav.main-nav a:focus,
-    header nav.main-nav a:active {
+    /* Hover/Focus/Active state for mobile menu items */
+    nav.main-nav ul li a:hover,
+    nav.main-nav ul li a:focus,
+    nav.main-nav ul li a:active {
         background-color: var(--primary-color);
         color: #fff;
         transition: background-color 0.3s ease, color 0.3s ease;
@@ -882,7 +916,32 @@ footer {
         margin-right: 5px;
     }
 
+    .main-discover-intro h1 {
+        font-size: 2.2rem;
+    }
 
+    .main-discover-intro p {
+        font-size: 1rem;
+    }
+
+    .discover-section {
+        padding: 2rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .discover-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #image-montage .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #image-montage .image-gallery img {
+        height: 180px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -939,8 +998,6 @@ footer {
     text-align: left;
 }
 
-
-
 .join-form-section {
     max-width: 600px;
     margin: 2rem auto;
@@ -950,8 +1007,6 @@ footer {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .join-form-section h3 {
     text-align: center;
@@ -966,26 +1021,21 @@ footer {
     gap: 1rem;
 }
 
-
 #membershipForm label {
     font-weight: bold;
     margin-bottom: 0.2rem;
     display: block;
-
 }
 
 .membership-card {
     margin-bottom: 2rem;
 }
 
-
 .membership-card a {
     display: block;
     text-align: center;
     margin-top: 10px;
 }
-
-/* In your styles/main.css */
 
 dialog {
     border: none;
@@ -1005,7 +1055,6 @@ dialog {
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-
 }
 
 #dialogContent {
@@ -1013,7 +1062,6 @@ dialog::backdrop {
     line-height: 1.6;
     max-height: 70vh;
     overflow-y: auto;
-
 }
 
 #dialogContent h3 {
@@ -1045,17 +1093,16 @@ dialog::backdrop {
 }
 
 #closeButton:hover {
-    background-color: var(--secondary-hover-color); 
+    background-color: var(--secondary-hover-color);
     opacity: 0.9;
 }
-
 
 #membershipForm label span {
     color: #dc3545;
     margin-left: 0.2rem;
 }
 
- /* Grouped input styles */
+/* Grouped input styles */
 #membershipForm input:not([type="hidden"]),
 #membershipForm select,
 #membershipForm textarea {
@@ -1080,7 +1127,6 @@ dialog::backdrop {
     resize: vertical;
     min-height: 80px;
 }
-
 
 #formMessage {
     margin-top: 1.5rem;
@@ -1130,19 +1176,69 @@ dialog::backdrop {
     }
 }
 
-/* --- Intro Section Styling (Discover Page) --- */
+/* --- Discover Page Styles --- */
+.discover-grid-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px 15px;
+    grid-template-areas:
+        "visitor"
+        "intro"
+        "history"
+        "demographics"
+        "events"
+        "places"
+        "montage";
+}
+
+.visitor-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    position: relative;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Styles for when the message starts fading out --- */
+.visitor-message.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.visitor-message.hidden {
+    display: none;
+}
+
+.section-base {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
 .main-discover-intro {
+    grid-area: intro;
     text-align: center;
     padding: 2rem 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     background-color: var(--light-bg-color);
     border-bottom: 2px solid var(--border-color);
+    box-shadow: none;
+    border: none;
 }
 
 .main-discover-intro h1 {
     font-size: 2.8rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     font-weight: 700;
 }
 
@@ -1154,14 +1250,9 @@ dialog::backdrop {
     margin: 0 auto;
 }
 
-/* --- General Section Styling (Discover Page) --- */
 .discover-section {
     padding: 2.5rem 1rem;
-    margin-bottom: 1.5rem;
-    background-color: var(--card-bg-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
+    margin-bottom: 0;
 }
 
 .discover-section:nth-of-type(even) {
@@ -1170,7 +1261,7 @@ dialog::backdrop {
 
 .discover-section h2 {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     font-size: 2.2rem;
     color: var(--primary-color);
     border-bottom: 2px solid var(--border-color);
@@ -1201,7 +1292,7 @@ dialog::backdrop {
 .discover-section li {
     padding-left: 1.8rem;
     position: relative;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     color: var(--text-color-dark);
     font-size: 1rem;
 }
@@ -1220,12 +1311,114 @@ dialog::backdrop {
     color: var(--primary-color);
 }
 
-/* --- Image Gallery   --- */
+#history {
+    grid-area: history;
+}
+
+#demographics {
+    grid-area: demographics;
+}
+
+#events {
+    grid-area: events;
+}
+
+#places-of-interest {
+    grid-area: places;
+}
+
+#image-montage {
+    grid-area: montage;
+}
+
+/* Styles for the dynamically loaded interest cards */
+.interest-cards-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.interest-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.interest-card h2 {
+    color: #0056b3;
+    font-size: 1.5em;
+    margin: 10px 0 5px;
+    padding: 0 15px;
+}
+
+.interest-card figure {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.interest-card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.interest-card img:hover {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .interest-card img:hover {
+        transform: none;
+        filter: none;
+    }
+}
+
+.interest-card figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    padding: 5px 15px;
+    background-color: #f9f9f9;
+}
+
+.interest-card address {
+    font-style: normal;
+    color: #555;
+    font-size: 0.95em;
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+.interest-card p {
+    padding: 0 15px;
+    font-size: 0.9em;
+    color: #444;
+    flex-grow: 1;
+}
+
+/* --- Image Gallery --- */
 #image-montage .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
 #image-montage .image-gallery figure {
@@ -1242,9 +1435,11 @@ dialog::backdrop {
     border: 1px solid var(--border-color);
 }
 
-#image-montage .image-gallery img:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+@media (max-width: 640px) {
+    #image-montage .image-gallery img:hover {
+        transform: none;
+        box-shadow: none;
+    }
 }
 
 #image-montage .image-gallery figcaption {
@@ -1257,39 +1452,7 @@ dialog::backdrop {
     border-top: 1px solid var(--border-color);
 }
 
-/* --- Responsive adjustments   --- */
-@media (max-width: 768px) {
-    .main-discover-intro h1 {
-        font-size: 2.2rem;
-    }
-
-    .main-discover-intro p {
-        font-size: 1rem;
-    }
-
-    .discover-section {
-        padding: 2rem 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .discover-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    #image-montage .image-gallery {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    #image-montage .image-gallery img {
-        height: 180px;
-    }
-}
-
-
 /* --- Styles for the Thank You Page --- */
-
 .thank-you-page {
     display: flex;
     justify-content: center;
@@ -1307,7 +1470,6 @@ dialog::backdrop {
     max-width: 700px;
     text-align: center;
     margin: 2rem auto;
-
 }
 
 .thank-you-content h1 {
@@ -1347,7 +1509,6 @@ dialog::backdrop {
     padding: 1.5rem;
     margin-top: 1.5rem;
     text-align: left;
-
 }
 
 .submission-details ul {
@@ -1364,25 +1525,102 @@ dialog::backdrop {
 
 .submission-details li strong {
     color: #1a4d2e;
-
 }
 
 .back-home-link {
     margin-top: 2.5rem;
 }
 
-
 .back-home-link .button {
-    padding: 1rem 2rem;  
+    padding: 1rem 2rem;
     font-size: 1.1em;
     color: white;
-   
 }
-
 
 .back-home-link .button:hover {
     background-color: var(--primary-hover-color);
     transform: translateY(-2px);
     color: var(--secondary-hover-color);
-    
+}
+
+/* --- MODAL STYLES --- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+    color: var(--text-color, #333);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Close Button (x) */
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color, #007bff);
+    text-decoration: none;
+}
+
+/* Modal image styling */
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* Hide overflow when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Push content down when menu is open */
+body.menu-open main,
+body.menu-open .your-first-section-after-header {
+    /* Adjust based on the height of header + nav. You might need to fine-tune this. */
+    margin-top: 220px !important;
 }

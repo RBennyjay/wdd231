@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Nike Art Gallery",
+      "address": "2 Elegushi Rd, Lekki Phase I, Lekki, Lagos",
+      "description": "One of the largest art galleries in West Africa, showcasing a vast collection of Nigerian traditional and contemporary art.",
+      "image": "images/galery.webp"
+    },
+    {
+        "name": "Freedom Park",
+        "address": "Old Prison Ground, Broad Street, Lagos Island, Lagos",
+        "description": "A former colonial prison transformed into a memorial and leisure park, hosting events, concerts, and art exhibitions.",
+        "image": "images/freedomcity.webp"
+      },
+      {
+        "name": "Eko Atlantic City",
+        "address": "Victoria Island, Lagos",
+        "description": "A new city being built on reclaimed land from the Atlantic Ocean, designed to be the financial hub of Africa.",
+        "image": "images/eko.webp"
+      },
+      {
+        "name": "Terra Kulture",
+        "address": "Plot 1376, Tiamiyu Savage St, Victoria Island, Lagos",
+        "description": "A leading art, culture, and lifestyle center offering a restaurant, theater, bookstore, and art gallery.",
+        "image": "images/egyptian.webp"
+      },
+    {
+      "name": "Lekki Conservation Centre",
+      "address": "Lekki Epe Expressway, Lekki, Lagos",
+      "description": "A protected natural resource center, home to a rich diversity of flora and fauna, featuring a famous canopy walkway.",
+      "image": "images/conserve.webp"
+    },
+    {
+      "name": "Badagry Slave Museum",
+      "address": "Badagry Town, Lagos",
+      "description": "A poignant museum documenting the history of the transatlantic slave trade, located in a historically significant coastal town.",
+      "image": "images/badacity.webp"
+    },
+  
+    {
+      "name": "National Museum Lagos",
+      "address": "Onikan, Lagos Island, Lagos",
+      "description": "Houses significant collections of Nigerian art, archaeology, and ethnography, including the famous Nok Terracottas.",
+      "image": "images/museum.webp"
+    },
+    {
+      "name": "Makoko Floating Community",
+      "address": "Yaba, Lagos",
+      "description": "An informal settlement built on stilts on Lagos Lagoon, showcasing unique adaptive architecture and community resilience.",
+      "image": "images/floatcity.webp"
+    }
+ 
+  
+  ]
