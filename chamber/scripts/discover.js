@@ -264,3 +264,45 @@ document.addEventListener('DOMContentLoaded', () => {
         lastModifiedSpan.textContent = document.lastModified;
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchIcon = document.querySelector('.search-icon');
+    const searchBarContainer = document.createElement('div'); // Create a new div for the search bar
+    searchBarContainer.classList.add('search-bar-container'); // Add a class for styling
+
+    // Create the search input field
+    const searchInput = document.createElement('input');
+    searchInput.setAttribute('type', 'text');
+    searchInput.setAttribute('placeholder', 'Search...');
+    searchInput.classList.add('search-input'); // Add a class for styling
+
+    // Append the input to the container
+    searchBarContainer.appendChild(searchInput);
+
+    // Insert the search bar container 
+    const headerRightGroup = document.querySelector('.header-right-group');
+    if (headerRightGroup) {
+        headerRightGroup.parentNode.insertBefore(searchBarContainer, headerRightGroup.nextSibling);
+    }
+
+    // Add a click event listener to the search icon
+    searchIcon.addEventListener('click', function() {
+        // Toggle the 'active' class to show/hide the search bar
+        searchBarContainer.classList.toggle('active');
+
+        //  Focus the input field when it appears
+        if (searchBarContainer.classList.contains('active')) {
+            searchInput.focus();
+        }
+    });
+
+    //  Hide search bar if user clicks outside of it
+    document.addEventListener('click', function(event) {
+        const isClickInsideSearchBar = searchBarContainer.contains(event.target) || searchIcon.contains(event.target);
+        if (!isClickInsideSearchBar && searchBarContainer.classList.contains('active')) {
+            searchBarContainer.classList.remove('active');
+        }
+    });
+});
