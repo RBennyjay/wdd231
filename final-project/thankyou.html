@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | LagosPropertyPro</title>
+    <meta name="description"
+        content="Your message has been successfully submitted to LagosPropertyPro. We appreciate your interest and will respond shortly.">
+    <meta name="author" content="Ebenezer John">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rbennyjay.github.io/wdd231/final-project/thankyou.html">
+    <meta property="og:title" content="Thank You | LagosPropertyPro">
+    <meta property="og:description"
+        content="Your message has been received. LagosPropertyPro will get back to you shortly.">
+    <meta property="og:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thank You | LagosPropertyPro">
+    <meta name="twitter:description"
+        content="Your message has been received. LagosPropertyPro will get back to you shortly.">
+    <meta name="twitter:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Styles & Scripts -->
+    <link rel="stylesheet" href="styles/property.css">
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">🏡 LagosPropertyPro</a>
+    
+            <input type="checkbox" id="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-checkbox"
+                aria-label="Toggle navigation">
+            <label for="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+    
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="current-page">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="submission-success-section container">
+            <h1>Thank You!</h1>
+            <p>Your message has been successfully received. We appreciate you reaching out to LagosPropertyPro.</p>
+            <p>We will review your submission and get back to you as soon as possible.</p>
+           
+            <div id="submitted-data-display" class="submitted-data-box">
+                <!-- Submitted data will be displayed here by JavaScript -->
+            </div>
+            <a href="index.html" class="button primary-button">Return to Home</a>
+            <a href="properties.html" class="button secondary-button">Browse More Properties</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-contact">
+                <h3>LagosPropertyPro</h3>
+                <p>1001 Allen Avenue, Ikeja</p>
+                <p>Lagos, Nigeria 100271</p>
+                <p><a href="mailto:info@propertypro.com">info@propertypro.com</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/watch?v=2GijSuQM5OU" target="_blank" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://x.com/RealBennyjay" target="_blank" aria-label="X (Twitter)"><i
+                        class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/ebenezerjohn1" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-info">
+                <h3>WDD231 Final Project</h3>
+                <p>Ebenezer John</p>
+                <p>© <span id="year"></span> LagosPropertyPro</p>
+                <p id="last-mode">Last Modified: <span id="lastModified"></span></p>
+    
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    
+    </body>
+    
+    </html>

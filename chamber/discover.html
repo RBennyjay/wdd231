@@ -32,20 +32,31 @@
         <link rel="preload" as="image" href="images/eko.webp">
         <link rel="preload" as="image" href="images/egyptian.webp">
     
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet" media="print" onload="this.media='all'">
-    
-        <!-- Font Awesome (non-blocking) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            media="print" onload="this.media='all'"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-        <!-- CSS (Defer non-critical) -->
-        <link rel="stylesheet" href="styles/main.css" />
-        <link rel="stylesheet" href="styles/medium.css" media="print" onload="this.media='all'">
-    
+<!-- Preconnect for font performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts (non-blocking) -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'">
+<noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</noscript>
+
+<!-- Font Awesome (non-blocking with fallback) -->
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</noscript>
+
+<!-- Your CSS -->
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/medium.css" media="print" onload="this.media='all'">
+<noscript>
+    <link rel="stylesheet" href="styles/medium.css">
+</noscript>
+
         <!-- JS -->
         <script src="scripts/discover.js" defer></script>
     </head>

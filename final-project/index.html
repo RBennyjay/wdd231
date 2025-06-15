@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>LagosPropertyPro - Find Your Dream Home</title>
+        <meta name="description"
+            content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro. Your ultimate platform for property search and investment in Lagos.">
+        <meta name="author" content="Ebenezer John">
+    
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://rbennyjay.github.io/wdd231/final-project/index.html">
+        <meta property="og:title" content="LagosPropertyPro - Find Your Dream Home">
+        <meta property="og:description"
+            content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro. Your ultimate platform for property search and investment in Lagos.">
+        <meta property="og:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
+    
+        <!-- Twitter Cards (optional but recommended) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="LagosPropertyPro - Find Your Dream Home">
+        <meta name="twitter:description"
+            content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro.">
+        <meta name="twitter:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
+    
+        <!-- Fonts & Icons -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    
+        <!-- Styles & Scripts -->
+        <link rel="stylesheet" href="styles/property.css">
+        <script type="module" src="scripts/main.js" defer></script>
+    </head>
+    
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">🏡 LagosPropertyPro</a>
+    
+            <input type="checkbox" id="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-checkbox"
+                aria-label="Toggle navigation">
+            <label for="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+    
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="current-page">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <div class="container hero-content">
+                    <h1>Your Dream Property Awaits</h1>
+                    <p>Find the perfect place to live, rent, or invest with ease.</p>
+                    <a href="properties.html" class="button primary-button">Browse Properties</a>
+                </div>
+            </section>
+        
+            <section class="featured-properties-section container">
+                <h2>Featured Properties</h2>
+                <div class="property-grid" id="featured-properties-container">
+                    <p>Loading featured properties...</p>
+                </div>
+                <div class="text-center">
+                    <a href="properties.html" class="button secondary-button">View All Properties</a>
+                </div>
+            </section>
+        
+            <section class="how-it-works-section">
+                <div class="container">
+                    <h2>How It Works</h2>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <h3>1. Search</h3>
+                            <p>Easily search for properties by location, type, price, and more.</p>
+                        </div>
+                        <div class="step-card">
+                            <h3>2. Discover</h3>
+                            <p>Explore detailed listings with high-quality images and descriptions.</p>
+                        </div>
+                        <div class="step-card">
+                            <h3>3. Connect</h3>
+                            <p>Contact agents or owners directly to arrange viewings.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <div id="property-details-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title"
+                aria-describedby="modal-description">
+                <div class="modal-content">
+                    <button class="close-button" aria-label="Close modal">&times;</button>
+                    <h2 id="modal-title">Property Details</h2>
+                    <div id="modal-description" class="modal-body">
+                        <p>Loading details...</p>
+                    </div>
+                </div>
+            </div> </main>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-contact">
+                <h3>LagosPropertyPro</h3>
+                <p>1001 Allen Avenue, Ikeja</p>
+                <p>Lagos, Nigeria 100271</p>
+                <p><a href="mailto:info@propertypro.com">info@propertypro.com</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.youtube.com/watch?v=2GijSuQM5OU" target="_blank" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://x.com/RealBennyjay" target="_blank" aria-label="X (Twitter)"><i
+                        class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/ebenezerjohn1" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-info">
+                <h3>WDD231 Final Project</h3>
+                <p>Ebenezer John</p>
+                <p>© <span id="year"></span> LagosPropertyPro</p>
+                <p id="last-mode">Last Modified: <span id="lastModified"></span></p>
+    
+            </div>
+        </div>
+    </footer>
+
+   
+
+  
+</body>
+
+</html>
