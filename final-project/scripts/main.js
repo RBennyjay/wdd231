@@ -2,7 +2,7 @@
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
 }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const propertyDetailsModal = document.getElementById('property-details-modal');
     const closeModalButton = propertyDetailsModal?.querySelector('.close-button');
 
-    let allProperties = []; // To store all fetched properties
+    let allProperties = [];
 
     // --- Common UI for all pages ---
     const mobileNavToggleCheckbox = document.getElementById('mobile-nav-toggle-checkbox');
@@ -47,10 +47,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // --- Logic specific to properties.html ---
     if (propertyListingsContainer) {
-        console.log('On properties.html page.');
         try {
             allProperties = await fetchProperties();
-            console.log('Fetched properties on properties.html:', allProperties);
             
             const savedFilters = loadFilterPreferences();
             if (savedFilters) {
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const initialFilteredProperties = filterProperties(allProperties, savedFilters);
             renderProperties(initialFilteredProperties, propertyListingsContainer);
-            console.log('Rendered properties on properties.html');
 
             if (filterForm) {
                 filterForm.addEventListener('submit', (event) => {
@@ -84,7 +81,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     };
 
                     saveFilterPreferences(filters);
-
                     const filteredProperties = filterProperties(allProperties, filters);
                     renderProperties(filteredProperties, propertyListingsContainer);
                 });
@@ -107,15 +103,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const property = allProperties.find(p => p.id === propertyId);
                         if (property) {
                             openModal(property, propertyDetailsModal);
-                        } else {
-                            console.error('Property not found:', propertyId);
                         }
                     }
                 }
             });
 
         } catch (error) {
-            console.error('Error loading properties on properties.html:', error);
             if (propertyListingsContainer) {
                 propertyListingsContainer.innerHTML = '<p class="error-message">Failed to load properties. Please try again later.</p>';
             }
@@ -124,30 +117,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // --- Logic specific to index.html (featured properties) ---
     if (featuredPropertiesContainer) {
-        console.log('On index.html page. Attempting to load featured properties.');
         try {
             if (allProperties.length === 0) {
-                 allProperties = await fetchProperties();
-                 console.log('Fetched properties on index.html (first load):', allProperties);
-            } else {
-                 console.log('Properties already fetched:', allProperties);
-            }
-           
-            // Ensure allProperties is an array and not empty before shuffling
-            if (!Array.isArray(allProperties) || allProperties.length === 0) {
-                console.error('allProperties is not an array or is empty. Cannot shuffle.');
-                featuredPropertiesContainer.innerHTML = '<p class="error-message">No properties available to display.</p>';
-                return; // Exit function if no properties
+                allProperties = await fetchProperties();
             }
 
-            const shuffledProperties = shuffleArray([...allProperties]); // Create a shallow copy to shuffle
-            console.log('Shuffled properties on index.html:', shuffledProperties);
-            
+            if (!Array.isArray(allProperties) || allProperties.length === 0) {
+                featuredPropertiesContainer.innerHTML = '<p class="error-message">No properties available to display.</p>';
+                return;
+            }
+
+            const shuffledProperties = shuffleArray([...allProperties]);
             const featuredProperties = shuffledProperties.slice(0, 3);
-            console.log('Featured properties for rendering on index.html:', featuredProperties);
-            
             renderProperties(featuredProperties, featuredPropertiesContainer);
-            console.log('Rendered featured properties on index.html');
 
             featuredPropertiesContainer.addEventListener('click', (event) => {
                 const viewDetailsBtn = event.target.closest('.view-details-btn');
@@ -158,20 +140,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const property = allProperties.find(p => p.id === propertyId);
                         if (property) {
                             openModal(property, propertyDetailsModal);
-                        } else {
-                            console.error('Property not found:', propertyId);
                         }
                     }
                 }
             });
 
         } catch (error) {
-            console.error('Error loading featured properties on index.html:', error);
             featuredPropertiesContainer.innerHTML = '<p class="error-message">Failed to load featured properties.</p>';
         }
     }
 
-    // --- Modal Close Listeners  ---
+    // --- Modal Close Listeners ---
     if (propertyDetailsModal) {
         if (closeModalButton) {
             closeModalButton.addEventListener('click', () => closeModal(propertyDetailsModal));

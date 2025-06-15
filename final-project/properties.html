@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Browse Properties for Sale & Rent | LagosPropertyPro</title>
-    <meta name="description"
-        content="Explore a wide selection of verified properties in Lagos. Find homes, apartments, and commercial spaces for sale or rent with ease.">
+    <meta name="description" content="Explore a wide selection of verified properties in Lagos. Find homes, apartments, and commercial spaces for sale or rent with ease.">
     <meta name="author" content="Ebenezer John">
 
     <!-- Open Graph / Facebook -->
@@ -25,9 +24,16 @@
         content="Explore a wide selection of verified properties in Lagos. Find homes, apartments, and commercial spaces for sale or rent with ease.">
     <meta name="twitter:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -38,14 +44,13 @@
 
     <!-- Styles & Scripts -->
     <link rel="stylesheet" href="styles/property.css">
-    <script type="module" src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/main.js"></script>
 </head>
-
 <body>
     <header class="site-header">
         <div class="container header-content">
             <a href="index.html" class="logo">🏡 LagosPropertyPro</a>
-    
+
             <input type="checkbox" id="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-checkbox"
                 aria-label="Toggle navigation">
             <label for="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-icon">
@@ -53,10 +58,10 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </label>
-    
+
             <nav class="navigation">
                 <ul class="nav-list">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="properties.html" class="current-page">Properties</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -74,7 +79,7 @@
                         <option value="">All</option>
                         <option value="buy">For Sale</option>
                         <option value="rent">For Rent</option>
-                        <option value="lend">For Lend</option>                       
+                        <option value="lend">For Lend</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -99,38 +104,37 @@
                     <label for="bedrooms">Bedrooms:</label>
                     <input type="number" id="bedrooms" name="bedrooms" min="0" placeholder="Any">
                 </div>
-                <button type="submit" class="button primary-button">Apply Filters</button>
-                <button type="reset" class="button secondary-button" id="reset-filters-btn">Reset Filters</button>
+                <button type="submit" class="btn btn-primary">Apply Filters</button>
+                <button type="reset" class="btn btn-secondary" id="reset-filters-btn">Reset Filters</button>
             </form>
 
             <div class="property-grid" id="property-listings-container">
-                <!-- Dynamic property listings will be loaded here by JavaScript -->
                 <p>Loading properties...</p>
             </div>
         </section>
-    
 
-
-    <!-- Modal Dialog Structure (hidden by default) -->
-    <div id="property-details-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title"
-        aria-describedby="modal-description">
-        <div class="modal-content">
-            <button class="close-button" aria-label="Close modal">&times;</button>
-            <h2 id="modal-title">Property Details</h2>
-            <div id="modal-description" class="modal-body">
-                <!-- Dynamic property details will be loaded here -->
-                <p>Loading details...</p>
+        <div id="property-details-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title"
+            aria-describedby="modal-description">
+            <div class="modal-content">
+                <button class="close-button" aria-label="Close modal">&times;</button>
+                <h2 id="modal-title">Property Details</h2>
+                <div id="modal-description" class="modal-body">
+                    <p>Loading details...</p>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+
+   
+</body>
+
     <footer>
         <div class="container footer-content">
             <div class="footer-contact">
                 <h3>LagosPropertyPro</h3>
                 <p>1001 Allen Avenue, Ikeja</p>
                 <p>Lagos, Nigeria 100271</p>
-                <p><a href="mailto:info@propertypro.com">info@propertypro.com</a></p>
+                <p> <a href="mailto:info@propertypro.com" aria-label="Send email to Property Pro support">Contact Us</a> </p>
             </div>
             <div class="footer-social">
                 <a href="https://www.youtube.com/watch?v=2GijSuQM5OU" target="_blank" aria-label="YouTube"><i

@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
         <title>LagosPropertyPro - Find Your Dream Home</title>
-        <meta name="description"
-            content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro. Your ultimate platform for property search and investment in Lagos.">
+        <meta name="description" content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro. Your ultimate platform for property search and investment in Lagos.">
         <meta name="author" content="Ebenezer John">
     
         <!-- Open Graph / Facebook -->
@@ -17,16 +16,24 @@
             content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro. Your ultimate platform for property search and investment in Lagos.">
         <meta property="og:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
     
-        <!-- Twitter Cards (optional but recommended) -->
+        <!-- Twitter Cards  -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="LagosPropertyPro - Find Your Dream Home">
         <meta name="twitter:description"
             content="Discover houses, apartments, and land for rent, sale, or loan on LagosPropertyPro.">
         <meta name="twitter:image" content="https://rbennyjay.github.io/wdd231/final-project/images/city1.webp">
-    
-        <!-- Fonts & Icons -->
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
+       
+        <!-- Font Awesome -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+                    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -36,33 +43,32 @@
     
         <!-- Styles & Scripts -->
         <link rel="stylesheet" href="styles/property.css">
-        <script type="module" src="scripts/main.js" defer></script>
+        <script type="module" src="scripts/main.js"></script>
     </head>
     
-<body>
-
-    <header class="site-header">
-        <div class="container header-content">
-            <a href="index.html" class="logo">🏡 LagosPropertyPro</a>
+    <body>
+        <header class="site-header">
+            <div class="container header-content">
+                <a href="index.html" class="logo">🏡 LagosPropertyPro</a>
     
-            <input type="checkbox" id="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-checkbox"
-                aria-label="Toggle navigation">
-            <label for="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-icon">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </label>
+                <input type="checkbox" id="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-checkbox"
+                    aria-label="Toggle navigation">
+                <label for="mobile-nav-toggle-checkbox" class="mobile-nav-toggle-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
     
-            <nav class="navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="current-page">Home</a></li>
-                    <li><a href="properties.html">Properties</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+                <nav class="navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="current-page">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-
+    
         <main>
             <section class="hero-section">
                 <div class="container hero-content">
@@ -71,7 +77,7 @@
                     <a href="properties.html" class="button primary-button">Browse Properties</a>
                 </div>
             </section>
-        
+    
             <section class="featured-properties-section container">
                 <h2>Featured Properties</h2>
                 <div class="property-grid" id="featured-properties-container">
@@ -81,7 +87,7 @@
                     <a href="properties.html" class="button secondary-button">View All Properties</a>
                 </div>
             </section>
-        
+    
             <section class="how-it-works-section">
                 <div class="container">
                     <h2>How It Works</h2>
@@ -101,7 +107,7 @@
                     </div>
                 </div>
             </section>
-        
+    
             <div id="property-details-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title"
                 aria-describedby="modal-description">
                 <div class="modal-content">
@@ -111,14 +117,15 @@
                         <p>Loading details...</p>
                     </div>
                 </div>
-            </div> </main>
+            </div>
+            </main>
     <footer>
         <div class="container footer-content">
             <div class="footer-contact">
                 <h3>LagosPropertyPro</h3>
                 <p>1001 Allen Avenue, Ikeja</p>
                 <p>Lagos, Nigeria 100271</p>
-                <p><a href="mailto:info@propertypro.com">info@propertypro.com</a></p>
+                <p> <a href="mailto:info@propertypro.com" aria-label="Send email to Property Pro support">Contact Us</a> </p>
             </div>
             <div class="footer-social">
                 <a href="https://www.youtube.com/watch?v=2GijSuQM5OU" target="_blank" aria-label="YouTube"><i
@@ -127,7 +134,8 @@
                         class="fab fa-x-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/ebenezerjohn1" target="_blank" aria-label="LinkedIn"><i
                         class="fab fa-linkedin-in"></i></a>
-            </div>
+            </div>         
+            
             <div class="footer-info">
                 <h3>WDD231 Final Project</h3>
                 <p>Ebenezer John</p>
@@ -137,9 +145,6 @@
             </div>
         </div>
     </footer>
-
-   
-
   
 </body>
 

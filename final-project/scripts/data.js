@@ -1,5 +1,4 @@
 // data.js
-
 // Fetch properties from a local JSON file asynchronously
 export async function fetchProperties() {
     try {
