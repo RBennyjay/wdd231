@@ -594,6 +594,15 @@ section:nth-of-type(even) {
     color: var(--footer-icon-hover);
 }
 
+/* Font Awesome brand icons - suppress validator warnings */
+.fa-brands,
+.fa-youtube,
+.fa-x-twitter,
+.fa-linkedin-in {
+    /* Styles provided by Font Awesome kit - inherits from parent */
+    transition: color 0.3s ease;
+}
+
 .footer-video-link a {
     display: inline-block;
     font-size: 13px;
