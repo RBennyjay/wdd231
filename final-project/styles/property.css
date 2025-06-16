@@ -595,6 +595,7 @@ section:nth-of-type(even) {
 }
 
 /* Font Awesome brand icons */
+.fab,
 .fa-brands,
 .fa-youtube,
 .fa-x-twitter,
