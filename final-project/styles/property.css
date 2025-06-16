@@ -1,20 +1,20 @@
 /* Basic Reset & Typography */
 :root {
-    --primary-color: #004085;  
-    --secondary-color: #3a3a3a;   
-    --accent-color: #1e7a34;   
-    --text-color: #333;  
+    --primary-color: #004085;
+    --secondary-color: #3a3a3a;
+    --accent-color: #1e7a34;
+    --text-color: #333;
     --light-bg: #f8f9fa;
     --dark-bg: #343a40;
     --white: #fff;
-    --border-color: #808080;  
+    --border-color: #808080;
     --shadow-light: rgba(0, 0, 0, 0.1);
     --card-bg-color: #fff;
-    --primary-darker: #003366;   
-    --red-primary: #992a23;  
-    --red-primary-hover: #1a237e;
+    --primary-darker: #003366;
+    --red-primary: #992a23;   
     --red-alpha-hover: rgba(194, 60, 51, 0.1);
     --footer-icon-hover: #ADD8E6;
+   
 }
 
 * {
@@ -38,7 +38,6 @@ body {
     margin: 0 auto;
     padding: 0 15px;
     width: 90%;
-  
 }
 
 h1,
@@ -49,6 +48,7 @@ h5,
 h6 {
     color: var(--dark-bg);
     margin-bottom: 0.8em;
+
 }
 
 h1 {
@@ -63,9 +63,7 @@ h3 {
     font-size: 1.5em;
 }
 
-
-h1,
-h2,
+/* Separate rule for label and p to avoid overriding heading margins */
 label,
 p {
     margin: 0.5rem 0;
@@ -77,39 +75,34 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--primary-color);   
-    text-decoration: none;
-}
 
 /* Buttons */
 .button,
-.btn {   
+.btn {
     display: inline-block;
-    padding: 10px 20px;   
+    padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    border: 2px solid transparent;   
+    border: 2px solid transparent;
     font-size: 1rem;
-  
 }
 
 .primary-button,
-.btn-primary {  
+.btn-primary {
     background-color: var(--primary-color);
     color: var(--white);
 }
 
 .primary-button:hover,
 .btn-primary:hover {
-    background-color: var(--primary-darker);   
+    background-color: var(--primary-darker);
 }
 
 .secondary-button,
-.btn-secondary {  
+.btn-secondary {
     background-color: var(--white);
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -167,20 +160,19 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-
-/*  hover states for navigation links */
+/* Hover states for navigation links */
 .navigation a:hover,
 .nav-list a:hover {
-    background-color: var(--red-alpha-hover);   
+    background-color: var(--red-alpha-hover);
     border-radius: 0.5rem;
-    color: var(--primary-color);  
-    text-decoration: none;
+    color: var(--primary-color);
+   
 }
 
 .nav-list a.current-page {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 .nav-list a.current-page::after {
@@ -199,15 +191,14 @@ a:hover {
 }
 
 .mobile-nav-toggle-icon {
-    display: none;  
-    flex-direction: column;  
-    justify-content: space-between; 
-    width: 25px; 
-    height: 18px;  
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
     cursor: pointer;
-    align-items: center; 
+    align-items: center;
     margin-left: auto;
-    
 }
 
 .mobile-nav-toggle-icon .bar {
@@ -266,26 +257,24 @@ section:nth-of-type(even) {
 .property-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; 
-    margin-top: 30px;    
+    gap: 30px;
+    margin-top: 30px;
     margin-bottom: 40px;
-   
 }
 
-/* Featured Properties Section  */
+/* Featured Properties Section */
 .featured-properties-section {
-    background-color: var(--white);   
-    padding: 2.5rem 1rem;   
-    border-radius: 10px;   
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);   
+    background-color: var(--white);
+    padding: 2.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 3rem;
-    
 }
 
 .featured-properties-section h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--red-primary);   
+    color: var(--red-primary);
     text-align: center;
 }
 
@@ -303,20 +292,20 @@ section:nth-of-type(even) {
 
 .property-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .property-card img {
     width: 100%;
-    height: 200px;   
+    height: 200px;
     object-fit: cover;
     display: block;
     border-bottom: 1px solid var(--border-color);
 }
 
 .property-card-content,
-.property-card .info {    
-    padding: 20px;  
+.property-card .info {
+    padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -331,7 +320,7 @@ section:nth-of-type(even) {
 .property-card p {
     margin-bottom: 8px;
     font-size: 0.95em;
-    color: #666;   
+    color: #666;
 }
 
 .property-card .price {
@@ -397,11 +386,10 @@ section:nth-of-type(even) {
     align-items: flex-end;
 }
 
-.form-group {    
+.form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-   
 }
 
 .filter-form label {
@@ -416,13 +404,13 @@ section:nth-of-type(even) {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"],
-.form-group textarea {   
-    padding: 10px;   
-    border: 1px solid var(--border-color);  
-    border-radius: 5px;    
-    font-size: 1em;   
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     resize: vertical;
 }
 
@@ -478,7 +466,6 @@ section:nth-of-type(even) {
     font-weight: bold;
     color: var(--text-color);
 }
-
 
 .contact-form-container button {
     width: 100%;
@@ -541,54 +528,78 @@ section:nth-of-type(even) {
 }
 
 /* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+.footer {
+    background-color: #222;  
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0 40px;
+    flex-wrap: nowrap;
 }
 
 .footer-contact,
-.footer-info,
-.footer-social {
+.footer-social,
+.footer-info {
+    flex: 1;
     text-align: center;
+    margin: 0;
 }
 
-.footer-contact a,
-footer h3 {   
-    color: #fff;
-    text-decoration: none;
+
+.footer-contact h3,
+.footer-info h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: white;
+   
+}
+
+.footer-contact p,
+.footer-info p {
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+ /* 'Contact Us' link */
+.footer-contact p a {
+    color: white;  
+    text-decoration: underline;
+
 }
 
 .footer-social a {
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    color: #fff;
-    transition: color 0.3s;
+    margin: 0 6px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
 }
 
-.footer-social a:hover {   
-    /* color: var(--white); */
+.footer-social a:hover,
+.footer-video-link a:hover {
     color: var(--footer-icon-hover);
-  
+}
+
+.footer-video-link a {
+    display: inline-block;
+    font-size: 13px;
+    color: white;
+    margin-top: 4px;
+    text-decoration: none;
 }
 
 #last-mode {
     font-size: 12px;
-    /* text-decoration: underline; */
+    text-decoration: underline;
 }
-
 /* Modal Styling */
 .modal {
     display: none;
@@ -666,26 +677,14 @@ footer h3 {
     font-weight: bold;
 }
 
-/* --- Media Queries --- */
 
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
-    .footer-contact,
-    .footer-info,
-    .footer-social {
-        flex: 1;
-        text-align: center;
-    }
-}
-
+/* Footer Media Query  */
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column;
+        flex-direction: column;       
         gap: 10px;
+        align-items: center;
     }
 
     .header-content {
@@ -695,7 +694,6 @@ footer h3 {
 
     .mobile-nav-toggle-icon {
         display: flex;
-      
     }
 
     .logo,
@@ -706,16 +704,14 @@ footer h3 {
     .navigation {
         width: 100%;
         display: none;
-       
         flex-direction: column;
         margin-top: 15px;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.3s ease-in-out;
-        position: static;       
-        border: none;     
+        position: static;
+        border: none;
         box-shadow: none;
-      
     }
 
     .nav-list {
@@ -739,9 +735,9 @@ footer h3 {
     .mobile-nav-toggle-checkbox:checked~.navigation {
         display: flex;
         max-height: 500px;
-      
     }
 }
+
 
 @media (max-width: 480px) {
     .hero-content h1 {
