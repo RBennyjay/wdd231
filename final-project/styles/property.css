@@ -570,9 +570,15 @@ section:nth-of-type(even) {
 }
 
  /* 'Contact Us' link */
-.footer-contact p a {
+.footer-contact a {
     color: white;  
     text-decoration: underline;
+    font-size: 13px;
+
+}
+
+.footer-contact p {
+    color: white;  
 
 }
 
