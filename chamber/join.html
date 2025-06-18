@@ -41,10 +41,12 @@
 
     <link rel="preload" href="styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="styles/main.css">
+        <!-- <link rel="stylesheet" href="styles/main.css"> -->
+        <link rel="stylesheet" href="styles/join.css">
     </noscript>
 
-    <script src="scripts/direct.js" defer></script>
+    <!-- <script src="scripts/direct.js" defer></script> -->
+    <script src="scripts/join.js" defer></script>
 
 </head>
 
@@ -96,8 +98,7 @@
         </div>
     </header>
 
-    <main>
-        <!-- Left/Top Section: Join Info and Form -->
+    <main>     
         <section class="join-content-left">
             <section class="join-info">
                 <h1>Become a Member</h1>
@@ -115,8 +116,7 @@
             </section>
 
             <section class="join-form-section">
-                <h3>Membership Application Form</h3>
-                <!-- REMOVED novalidate for browser validation -->
+                <h3>Membership Application Form</h3>             
                 <form id="membershipForm" method="get" action="thankyou.html">
                     <label for="firstName">First Name<span aria-hidden="true">*</span>:</label>
                     <input type="text" id="firstName" name="first" title="Enter your first name" required
@@ -163,7 +163,7 @@
             </section>
         </section>
 
-        <!-- Right/Bottom Section: Membership Cards -->
+    
         <section class="membership-cards-container">
             <!-- Non-Profit Card -->
             <div class="membership-card" id="np-card">
