@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hamburgerIcon.classList.remove('fa-times'); 
                 hamburgerIcon.classList.add('fa-bars');  
             }
-            // --- End Icon Change Logic ---
-
+           
             // --- Content Pushing Logic ---
             if (window.innerWidth <= 768) {
                 if (navMenu.classList.contains('active')) {
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close the menu when a nav link is clicked (for mobile usability)
+        // Close the menu when a nav link is clicked 
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active'); 
@@ -48,8 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // --- Icon Change Logic on Close: Reset to bars icon ---
                 hamburgerIcon.classList.remove('fa-times');
-                hamburgerIcon.classList.add('fa-bars');
-                // --- End Icon Change Logic on Close ---
+                hamburgerIcon.classList.add('fa-bars');                
 
                 mainContent.style.marginTop = '0';
             });
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const searchIcon = document.querySelector('.search-icon');
     const searchBarContainer = document.createElement('div'); // Create a new div for the search bar
-    searchBarContainer.classList.add('search-bar-container'); // Add a class for styling
+    searchBarContainer.classList.add('search-bar-container'); 
 
     // Create the search input field
     const searchInput = document.createElement('input');

@@ -1,0 +1,738 @@
+/* --- CSS Reset/Normalization --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+/* --- Global Styles & Typography --- */
+:root {
+    --primary-color: #0047AB;
+    --secondary-color: #FFBF00;
+    --background-color: #F9F9F9;
+    --text-color: #333333;
+    --card-bg-color: #FFFFFF;
+    --border-color: #e0e0e0;
+    --light-bg-color: #eef7ff;
+    --primary-hover-color: #0056b3;
+    --secondary-hover-color: #e6a800;
+    --link-hover-color: var(--secondary-color);
+    --card-shadow-initial: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+  
+    word-wrap: break-word;
+   
+    overflow-wrap: break-word;
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;    
+    box-sizing: border-box;  
+    width: 100%;
+}
+
+/* --- Header Section (Common) --- */
+header {
+    background-color: var(--card-bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    padding: 0 1rem;
+  
+    max-width: 1200px;
+   
+    margin: 0 auto;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo .chamber-logo {
+    flex-shrink: 0;
+}
+
+.chamber-logo path {
+    fill: var(--primary-color);
+    transition: fill 0.3s ease;
+}
+
+.logo:hover .chamber-logo path {
+    fill: var(--secondary-color);
+}
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.site-title .city-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.site-title .chamber-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Desktop navigation styles (Common) */
+nav.main-nav {
+    margin: 0;
+    padding: 0;
+}
+
+nav.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav.main-nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav.main-nav ul li a {
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    color: var(--primary-color);
+}
+
+nav.main-nav ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+nav.main-nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.search-icon i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.search-icon i:hover {
+    color: var(--secondary-color);
+}
+
+/* Search Bar (Common) */
+.search-bar-container {
+    display: none;
+    position: absolute;
+    top: 100px;
+   
+    right: 15px;
+    width: calc(100% - 30px);
+    max-width: 90vw;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: white;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.search-bar-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+/* Hamburger menu (Common) */
+.hamburger-menu {
+    display: none;   
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    z-index: 1001;
+}
+
+/* --- Main Content Layout (Common) --- */
+main {
+    flex: 1;
+   
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+   
+    box-sizing: border-box;
+   
+    width: 100%;
+   
+}
+
+/* --- Directory Controls --- */
+.directory-controls {
+    display: flex;
+    justify-content: flex-end;
+    
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    padding: 0 1rem;
+    
+    box-sizing: border-box;
+   
+    max-width: 1200px;
+    
+    margin-left: auto;
+   
+    margin-right: auto;
+}
+
+/* Button Styles  */
+.button,
+.directory-controls button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    height: auto;
+    width: auto;
+    min-width: 100px;
+    max-width: 150px;
+    font-size: 0.95rem;
+}
+
+.button:hover,
+.directory-controls button:hover {
+    background-color: var(--primary-hover-color);
+    color: var(--secondary-hover-color);
+    transform: translateY(-2px);
+}
+
+/* --- Member Container Views (Grid & List) --- */
+#membersContainer {
+    gap: 20px;
+    margin-bottom: 2rem;
+    width: 100%;    
+    align-items: stretch;    
+    box-sizing: border-box;   
+    padding: 0 1rem;
+   
+}
+
+/* Base Card Styles  */
+.card-base {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow-initial);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    
+}
+
+.card-base:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Specific styles for member-card */
+.member-card {
+    
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+   
+    padding: 1.5rem;
+  
+    text-align: left;
+   
+    height: 100%;
+  
+    min-width: 0;
+   
+}
+
+.member-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    min-width: 0;   
+    word-wrap: break-word;
+    
+}
+
+.member-card p {
+    color: #555;
+    margin-bottom: 0.5em;  
+    min-width: 0;
+    
+    word-wrap: break-word;
+    
+}
+
+.member-card a {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: 0.8rem;  
+    min-width: 0;
+  
+}
+
+.member-card .member-logo {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+    padding: 5px;
+    object-fit: contain;
+    max-width: 150px;
+ 
+    height: auto;
+  
+    margin-bottom: 1rem;
+   
+    max-width: 100%;
+   
+    min-width: 0;
+    
+}
+
+/* Grid View Specifics */
+.grid-view {
+    display: grid;   
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   
+}
+
+@media (min-width: 600px) {   
+    .grid-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+  
+    .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* List View Specifics (active when .list-view class is present) */
+.list-view {
+    display: flex;    
+    flex-direction: column;   
+    gap: 15px;    
+    grid-template-columns: unset;
+    grid-gap: unset;
+}
+
+.list-view .member-card {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    
+    gap: 20px;
+    text-align: left;
+    min-width: 0;
+    
+}
+
+.list-view .member-card .member-logo {
+    width: 80px;   
+    height: 80px;
+    flex-shrink: 0;   
+    margin-right: 15px;
+    margin-bottom: 0;   
+    object-fit: cover;
+    
+}
+
+
+.list-view .member-info {
+    flex-grow: 1;
+  
+    min-width: 0;
+   
+}
+
+.list-view .member-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.list-view .member-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3em;
+}
+
+.list-view .member-card a {
+    margin-top: 0.5rem;
+}
+
+/* --- Footer Section (Common) --- */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1.5rem 0 1rem 0;
+    font-size: 0.9rem;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+  
+    box-sizing: border-box;
+   
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    padding-bottom: 0;
+    max-width: 1200px;
+   
+    margin: 0 auto;
+    
+    padding: 0 1rem;
+    
+    box-sizing: border-box;
+   
+}
+
+.footer-contact,
+.footer-social,
+.footer-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-contact h3,
+.footer-info h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5em;
+}
+
+.footer-contact a,
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-contact a:hover,
+.footer-info a:hover {
+    color: var(--secondary-hover-color);
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-social a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--secondary-hover-color);
+}
+
+.footer-info p {
+    margin-bottom: 0.5em;
+}
+
+#lastModified,
+#last-mode {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* --- Media Queries (Mobile Specific Styles) --- */
+@media (max-width: 768px) {
+   
+    .container,
+    main,
+    .directory-controls,
+    #membersContainer,
+    .footer-content {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    
+    .header-content {
+        padding: 0 0.75rem;
+       
+    }
+
+    .hamburger-menu {
+        display: block;       
+        margin-left: 15px;
+        order: 2;
+       
+    }
+
+    nav.main-nav {
+        display: none;       
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        padding: 1rem 0;
+    }
+
+    nav.main-nav.active {
+        display: flex;
+       
+    }
+
+    nav.main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    nav.main-nav ul li {
+        width: 100%;
+        display: block;
+    }
+
+    nav.main-nav ul li a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: var(--primary-color);
+        text-align: center;
+    }
+
+    nav.main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    nav.main-nav ul li a.active::after {
+        bottom: 0;
+        height: 1px;
+    }
+
+    .search-icon {
+        margin-left: 0;
+    }
+
+    /* Directory Page Specific Mobile Styles */
+    .directory-controls {
+        display: flex;       
+        justify-content: center;       
+        flex-wrap: wrap;        
+        margin-top: 1rem;
+       
+    }
+
+    .directory-controls button {
+        width: calc(50% - 5px);      
+        max-width: unset;      
+        min-width: unset;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .directory-controls button:first-child {
+        margin-right: 5px;
+        /* Space between buttons */
+    }
+
+    /* Mobile grid view: one column per row */
+    .grid-view {
+        grid-template-columns: 1fr;
+       
+    }
+
+    /* Mobile list view: adjust member-card layout for smaller screens */
+    .list-view .member-card {
+        flex-direction: row;       
+        align-items: center;        
+        padding: 1rem;       
+        text-align: left;
+        flex-wrap: nowrap;
+       
+    }
+
+    .list-view .member-card .member-logo {
+        width: 60px;      
+        height: 60px;
+        margin-right: 10px;       
+        margin-bottom: 0;       
+        flex-shrink: 0;
+ 
+    }
+
+    .list-view .member-info {
+        min-width: 0;      
+        flex-grow: 1;       
+        flex-shrink: 1;
+       
+    }
+
+    .list-view .member-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2em;
+    }
+
+    .list-view .member-card p {
+        font-size: 0.85em;
+        margin-bottom: 0.2em;
+    }
+
+    .list-view .member-card a {
+        font-size: 0.85em;
+        margin-top: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title .city-name {
+        font-size: 1.5rem;
+    }
+
+    .site-title .chamber-label {
+        font-size: 0.8rem;
+    }
+
+    .directory-controls button {
+        width: 100%;       
+        margin-right: 0 !important;        
+        margin-bottom: 10px;
+        
+    }
+
+    .directory-controls button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Hide overflow when menu is open (Common) */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Push content down when menu is open (Common) */
+body.menu-open main,
+body.menu-open .your-first-section-after-header {
+    margin-top: 220px !important;
+    
+}
