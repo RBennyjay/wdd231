@@ -1,52 +1,46 @@
-/* Join Page card colors */
-:root {
+/* General Root Variables */
+:root {    
     --nonprofit-light: #aed6f1;
     --nonprofit-dark: #5d9cec;
     --nonprofit-border: #3f6ebc;
     --nonprofit-text-dark: #FFFFFF;
-    /* Improved contrast */
+    
 
     --bronze-light: #d2a450;
     --bronze-dark: #a1702a;
     --bronze-border: #7a571c;
     --bronze-text-dark: #FFFFFF;
-    /* Improved contrast */
+   
 
     --silver-light: #c0c0c0;
     --silver-dark: #8e8e8e;
     --silver-border: #6a6a6a;
     --silver-text-dark: #FFFFFF;
-    /* Improved contrast */
+  
 
     --gold-light: #ffd700;
     --gold-dark: #b8860b;
-    --gold-border: #8e6a00;
-    /* --gold-text-dark: #6b4e00; */
+    --gold-border: #8e6a00;   
     --gold-text-dark: #1A1A1A;
-    /* Improved contrast */
+   
 
     --form-focus-shadow: rgba(0, 123, 255, 0.25);
     --dark-black-text: #000000;
-    /* Added this variable for dark black */
+   
+
     --card-bg-color: #FFFFFF;
-    /* Assuming a default light background for join-info, if not defined elsewhere */
     --text-color: #333333;
-    /* Assuming a default text color, if not defined elsewhere */
     --primary-color: #007bff;
-    /* Assuming a primary color, if not defined elsewhere */
     --primary-hover-color: #0056b3;
-    /* Assuming a primary hover color, if not defined elsewhere */
     --secondary-hover-color: #ffffff;
-    /* Assuming a secondary hover color, if not defined elsewhere */
     --border-color: #ced4da;
-    /* Assuming a border color, if not defined elsewhere */
     --input-bg-color: #ffffff;
-    /* Assuming an input background color, if not defined elsewhere */
     --card-shadow-initial: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Assuming default shadow */
     --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* Assuming hover shadow */
+
+  
 }
+
 
 /* --- Main Content Layout (for Join Page & General) --- */
 main {
@@ -57,14 +51,11 @@ main {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 @media (min-width: 768px) {
-
     main {
         flex-direction: row;
-
     }
 }
 
@@ -73,7 +64,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
 }
 
 .join-info,
@@ -83,60 +73,48 @@ main {
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow-initial);
     flex: 1;
-    /* This might not be specific enough for nested text, but good as a general fallback */
+ 
     color: var(--dark-black-text);
 }
 
 
-/* *** START OF CRITICAL CHANGES FOR TEXT COLOR *** */
 
-/* Target the h1 specifically within .join-info */
 .join-info>h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: left;
     color: var(--dark-black-text) !important;
-    /* Added !important for highest specificity */
 }
 
-/* Target the paragraph specifically within .join-info */
 .join-info>p {
     color: var(--dark-black-text) !important;
-    /* Added !important */
     margin-bottom: 1rem;
 }
 
-/* Target the ul specifically within .join-info */
 .join-info>ul {
     list-style: disc;
     padding-left: 1.5rem;
     color: var(--dark-black-text) !important;
-    /* Added !important */
     margin-bottom: 1rem;
 }
 
-/* Target the li specifically within the ul inside .join-info */
 .join-info ul>li {
-    /* Using direct child for ul > li for more specificity */
+ 
     color: var(--dark-black-text) !important;
-    /* Added !important */
 }
 
-/* Also apply to .join-form-section h3 as it was grouped with .join-info h1 */
+
 .join-form-section h3 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: left;
     color: var(--dark-black-text) !important;
-    /* Added !important */
 }
 
-/* *** END OF CRITICAL CHANGES FOR TEXT COLOR *** */
 
-
-/* Form Styling (Join Page Specific) */
+/* --- Form Styling (Join Page Specific) --- */
 .join-form-section form {
     display: flex;
     flex-direction: column;
@@ -163,6 +141,7 @@ main {
     line-height: 1.5;
     background-color: var(--input-bg-color);
     color: var(--text-color);
+   
 }
 
 .join-form-section input:focus,
@@ -195,7 +174,6 @@ main {
     width: auto;
     min-width: 180px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
 
 .join-form-section button[type="submit"]:hover {
@@ -211,7 +189,7 @@ main {
     text-align: center;
     font-weight: 600;
     color: #16a34a;
-
+    /* Green for success */
 }
 
 #formMessage.success {
@@ -227,26 +205,22 @@ main {
 }
 
 .join-form-section label span {
-    color: #dc3545;
-    /* Red asterisk */
+    color: #dc3545;  
     margin-left: 0.2rem;
 }
 
-/* Membership Cards Section */
+
+/* --- Membership Cards Section --- */
 .membership-cards-container {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-
 }
 
 @media (min-width: 1024px) {
-
-    /* Large screens and up */
     .membership-cards-container {
         grid-template-columns: repeat(2, 1fr);
-
     }
 }
 
@@ -258,9 +232,9 @@ main {
     border-bottom: 4px solid;
     transition: transform 0.3s ease-in-out;
     transform: scale(1);
-    opacity: 0;
+    opacity: 0; 
     transform: translateY(50px);
-
+   
 }
 
 .membership-card:hover {
@@ -285,7 +259,6 @@ main {
     font-weight: 800;
     color: white;
     margin-bottom: 1.5rem;
-
 }
 
 .membership-card .price span.price-suffix {
@@ -309,53 +282,53 @@ main {
 .membership-card#np-card p,
 .membership-card#np-card .price {
     color: #FFFFFF;
-    /* white on dark blue is sufficient */
+   
 }
 
 .membership-card#bronze-card h3,
 .membership-card#bronze-card p,
 .membership-card#bronze-card .price {
     color: #FFFFFF;
-    /* white on brown is sufficient */
+   
 }
 
 .membership-card#silver-card h3,
 .membership-card#silver-card p,
 .membership-card#silver-card .price {
     color: #FFFFFF;
-    /* white on gray works */
+   
 }
 
 .membership-card#gold-card h3,
 .membership-card#gold-card p,
 .membership-card#gold-card .price {
     color: #1A1A1A;
-    /* much darker text to contrast against gold */
+   
 }
 
 /* Membership Card Button Text Contrast */
 .membership-card#np-card button.open-modal-btn {
     background-color: #FFFFFF;
     color: #2D6BC5;
-    /* dark blue text */
+  
 }
 
 .membership-card#bronze-card button.open-modal-btn {
     background-color: #FFFFFF;
     color: #A0642F;
-    /* bronze text */
+    
 }
 
 .membership-card#silver-card button.open-modal-btn {
     background-color: #FFFFFF;
     color: #6C757D;
-    /* gray text */
+  
 }
 
 .membership-card#gold-card button.open-modal-btn {
     background-color: #FFFFFF;
     color: #333333;
-    /* deep gray text */
+   
 }
 
 /* Modal content contrast enhancements */
@@ -366,7 +339,7 @@ main {
 
 .membership-card button.open-modal-btn:hover {
     background-color: #f3f4f6;
-    /* light gray on hover */
+    
 }
 
 /* Card Specific Colors and Gradients */
@@ -391,6 +364,7 @@ main {
 .membership-card#gold-card {
     background-color: #DAA520;
     color: #333333;
+   
     border-color: var(--gold-border);
 }
 

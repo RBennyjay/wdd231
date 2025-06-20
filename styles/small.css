@@ -171,7 +171,6 @@ main {
 
 
 
-
 .card.main-city {
     display: flex;
     flex-direction: column;
@@ -187,7 +186,6 @@ card.main-city img {
     margin: 0.5rem auto 0;
     display: block;
 }
-
 
 
 
@@ -215,7 +213,7 @@ card.main-city img {
 .course-btn {
     padding: 0.75rem 1.5rem;
     border: none;
-    background-color: #833f27;
+    background-color:#7b0000;
     color: white;
     font-weight: bold;
     border-radius: 0.5rem;
@@ -298,7 +296,7 @@ footer img {
 
 /* Course Button */
 .course-button {
-    background-color: #b55a3b;
+    background-color: #7b0000;
     color: white;
     padding: 10px 20px;
     margin: 5px;
@@ -437,4 +435,20 @@ div {
         margin: 0 auto;
         padding: 0 1rem;
     }
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

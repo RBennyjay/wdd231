@@ -1,15 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const courseList = document.getElementById("course-list");
+    const courseList = document.getElementById("course-list"); 
     const courseContainer = document.getElementById("course-buttons");
     const filterButtons = document.querySelectorAll(".filter-buttons button");
     const creditsSummary = document.getElementById("credits-summary");
 
+    // Get the modal elements
+    const courseModal = document.getElementById("courseModal");
+    const closeButton = document.querySelector(".close-button");
+    const modalCourseTitle = document.getElementById("modalCourseTitle");
+    const modalCourseDescription = document.getElementById("modalCourseDescription");
+
     function displayBulletPoints(count) {
-        courseList.innerHTML = "";
-        for (let i = 0; i < count; i++) {
-            const li = document.createElement("li");
-            li.innerHTML = "&nbsp;";
-            courseList.appendChild(li);
+       
+        if (courseList) { 
+            courseList.innerHTML = "";
+            for (let i = 0; i < count; i++) {
+                const li = document.createElement("li");
+                li.innerHTML = "&nbsp;";
+                courseList.appendChild(li);
+            }
         }
     }
 
@@ -118,6 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.classList.add("completed");
             }
             button.innerHTML = `${course.subject} ${course.number}${course.completed ? ' ✔️' : ''}`;
+            
+            // Store the course title and description as data attributes
+            button.setAttribute("data-course-title", `${course.subject} ${course.number} - ${course.title}`);
+            button.setAttribute("data-course-description", course.description);
+
+            // Add click event listener to open the modal
+            button.addEventListener("click", () => {
+                modalCourseTitle.textContent = button.getAttribute("data-course-title");
+                modalCourseDescription.textContent = button.getAttribute("data-course-description");
+                courseModal.style.display = "flex"; // Use flex to center the modal content
+            });
+
             courseContainer.appendChild(button);
         });
 
@@ -131,6 +152,22 @@ document.addEventListener("DOMContentLoaded", () => {
             renderCourses(filteredCourses);
         });
     });
+
+    // Close the modal when the close button is clicked
+    if (closeButton) {
+        closeButton.addEventListener("click", () => {
+            courseModal.style.display = "none";
+        });
+    }
+
+    // Close the modal when clicking outside of the modal content
+    if (courseModal) {
+        window.addEventListener("click", (event) => {
+            if (event.target == courseModal) {
+                courseModal.style.display = "none";
+            }
+        });
+    }
 
     // Initial render
     renderCourses(courses);

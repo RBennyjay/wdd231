@@ -20,7 +20,7 @@ header {
 
     min-height: 160px;
 
-    background-color: #1D5A78;
+    background-color: #0f3d5a;
     color: white;
 }
 
@@ -28,13 +28,12 @@ header {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* Center content horizontally */
+
     align-items: center;
-    /* Center content vertically */
     padding: 1rem;
     width: 100%;
     height: calc(100% - 40px);
-    /* Adjust based on nav height */
+
 }
 
 .header-top img {
@@ -99,7 +98,6 @@ nav a.active {
     margin-bottom: 0.5rem;
 }
 
-
 @media screen and (min-width: 768px) {
     .card-container {
         display: flex;
@@ -108,7 +106,7 @@ nav a.active {
         font-size: 15px;
         margin-top: 0;
         font-weight: 400;
-      
+
 
     }
 
@@ -125,7 +123,6 @@ nav a.active {
         margin-top: 0;
         margin-bottom: 0;
         font-weight: 400;
-
 
         flex-direction: column;
 
@@ -147,7 +144,6 @@ nav a.active {
     }
 
     .card.main-city p {
-        /* font-size: 1.5rem; */
         margin-top: 0;
         margin-bottom: 0;
         padding: 0;
@@ -173,7 +169,7 @@ nav a.active {
     .course-btn {
         padding: 1rem 2rem;
         border: none;
-        background-color: #833f27;
+        background-color: #7b0000;
         color: white;
         font-weight: bold;
         border-radius: 0.5rem;
@@ -186,15 +182,15 @@ nav a.active {
         background-color: #a04e34;
     }
 
-    /* For larger screens, adjust header-top to center image and title */
+
     .header-top {
         justify-content: center;
-        /* Center content horizontally */
+
     }
 
     .header-top img {
         margin-right: 1.5rem;
-        /* Keep spacing */
+
     }
 }
 
@@ -212,7 +208,7 @@ main {
     gap: 1rem;
     padding: 1rem;
     margin: 0.5rem;
-    
+
 }
 
 .card {
@@ -230,11 +226,11 @@ main {
     flex: 1 1 35%;
     margin: 0.5rem;
     padding: 1rem;
-   
+
 }
 
 .card h2 {
-    background-color: #1d5a78;
+    background-color:#0f3d5a;
     color: white;
     padding: 0.5rem;
     border-radius: 0.3rem;
@@ -252,7 +248,7 @@ main {
 .course-btn {
     padding: 1rem 2rem;
     border: none;
-    background-color: #833f27;
+    background-color: #7b0000;
     color: white;
     font-weight: bold;
     border-radius: 0.5rem;
@@ -269,7 +265,7 @@ main {
 /* === Special Styling for CSE 210 and WDD 231 === */
 .special-button {
     background-color: #f0f0f0;
-    /* Slightly darker white */
+
     color: black;
 }
 
@@ -308,10 +304,9 @@ main {
 }
 
 
-
 /* === Footer === */
 footer {
-    background: #1D5A78;
+    background: #0f3d5a;
     color: #ffffff;
     padding: 15px;
     width: 100%;
@@ -355,10 +350,8 @@ footer img {
 }
 
 
-
 .course-button {
-    background-color: #b55a3b;
-    /* dark brown for default */
+    background-color:#7b0000;
     color: white;
     padding: 10px 20px;
     margin: 5px;
@@ -371,7 +364,6 @@ footer img {
 
 .course-button.completed {
     background-color: #e1e1e1;
-    /* light gray */
     color: black;
 }
 
@@ -386,4 +378,50 @@ footer img {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+/* Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

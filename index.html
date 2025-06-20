@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Course Home Page: Explore how HTML, CSS, and JavaScript are applied in designing and developing my responsive course homepage.">
+    <meta name="author" content="Ebenezer John">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ebenezer John | Home">
-    <meta property="og:description" content="Course Home Page assignment: Overview of applying HTML, CSS, and JavaScript in the design and development of my course homepage.">
+    <meta property="og:description"
+        content="Course Home Page assignment: Overview of applying HTML, CSS, and JavaScript in the design and development of my course homepage.">
     <meta property="og:image" content="https://rbennyjay.github.io/wdd231/images/benny.webp">
     <meta property="og:url" content="https://rbennyjay.github.io/wdd231/">
     <meta property="og:type" content="website">
@@ -14,17 +18,25 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ebenezer John | Home">
-    <meta name="twitter:description" content="Course Home Page assignment: Overview of applying HTML, CSS, and JavaScript in the design and development of my course homepage.">
+    <meta name="twitter:description"
+        content="Course Home Page assignment: Overview of applying HTML, CSS, and JavaScript in the design and development of my course homepage.">
     <meta name="twitter:image" content="https://rbennyjay.github.io/wdd231/images/benny.webp">
 
     <title>Ebenezer John | Home</title>
+
+    <link rel="preload" href="styles/large.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/small.css" media="(max-width: 767px)" />
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            as="style" onload="this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+        </noscript>
+        
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -40,16 +52,16 @@
 
     <header>
         <button id="menu" class="hamburger" aria-label="Toggle menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span></span>
+            <!-- <span class="bar"></span>
+            <span class="bar"></span> -->
         </button>
-    
+
         <div class="header-top branding">
-            <img src="images/benny.webp" alt="Ebenezer John">
+            <img src="images/benny.webp" alt="Ebenezer John"width="100" height="100">
             <div class="site-title">Ebenezer John</div>
         </div>
-    
+
         <nav id="nav">
             <a href="#" class="active">Home</a>
             <a href="https://rbennyjay.github.io/wdd231/chamber/index.html" target="_blank">Chamber</a>
@@ -57,8 +69,8 @@
             <a href="https://github.com/RBennyjay" target="_blank">GitHub Profile</a>
             <a href="https://www.linkedin.com/in/ebenezerjohn1" target="_blank">LinkedIn</a>
         </nav>
-    </header>    
-    
+    </header>
+
     <main>
         <h1 class="home-title">Home</h1>
         <section class="card-container">
@@ -71,30 +83,39 @@
 
             <section class="card main-city">
                 <h2>Lagos, Nigeria</h2>
-                <img src="images/lagos1.webp" alt="Lagos City">
+                <img src="images/lagos1.webp" alt="Lagos City"width="300" height="200">
                 <p>Lagos City</p>
             </section>
-        </section> 
-            <section class="card certificate-section" id="certificate-section">
-                <h2>Web and Computer Programming Certificate</h2>
-                <div class="filter-buttons" id="certificate-courses">
-                    <button data-filter="all">All</button>
-                    <button data-filter="CSE">CSE</button>
-                    <button data-filter="WDD">WDD</button>
-                </div>
-            
-                <!-- Add this container -->
-                <div id="credits-summary"></div>
-            
-                <div id="course-buttons" class="course-buttons">
-                    <!-- Course buttons will be injected here -->
-                </div>
-            </section>         
-       
+        </section>
+        <section class="card certificate-section" id="certificate-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons" id="certificate-courses">
+                <button data-filter="all">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
+            </div>
+
+            <!-- Add this container -->
+            <div id="credits-summary"></div>
+
+            <div id="course-buttons" class="course-buttons">
+                <!-- Course buttons will be injected here -->
+            </div>
+        </section>
+
+        <div id="courseModal" class="modal">
+        <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modalCourseTitle"></h3>
+        <p id="modalCourseDescription"></p>
+        </div>
+</div>
+
     </main>
 
     <footer>
-        <span>&copy; <span id="current-year"></span> 🌺 Ebenezer John 🌺 Nigeria</span> <img src="images/nigerian_flag1.png" alt="nigerian_flag"><br>
+        <span>&copy; <span id="current-year"></span> 🌺 Ebenezer John 🌺 Nigeria</span> <img
+            src="images/nigerian_flag1.png" alt="nigerian_flag"width="60" height="40"><br>
         <span id="last-modified"></span>
     </footer>
 </body>
